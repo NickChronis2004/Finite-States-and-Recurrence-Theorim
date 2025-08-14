@@ -24,8 +24,3 @@ Key physical intuition:
 - `Finite_States_and_Recurrence_v4.tex` — LaTeX source.
 - `Finite_States_and_Recurrence_v4.pdf` — compiled PDF.
 - `fig_*` — figures used in the paper.
-
-## Citation
-
-If you use or refer to this work, please cite:
-
