@@ -25,4 +25,4 @@ Key physical intuition:
 - `Finite_States_and_Recurrence_v4.pdf` — compiled PDF.
 - `fig_*` — figures used in the paper.
 
-![Image description](https://github.com/user-attachments/files/21765959/CCR_flowchart.pdf)
+![Image description]([https://github.com/user-attachments/files/21765959/CCR_flowchart.pdf](https://github.com/NickChronis2004/Finite-States-and-Recurrence-Theorim/blob/d261ac04ead6b0d64019f467cb7baaf6b2062a48/CCR_flowchart.pdf))
