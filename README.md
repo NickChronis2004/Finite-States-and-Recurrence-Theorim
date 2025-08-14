@@ -21,8 +21,8 @@ Key physical intuition:
 
 ## Structure
 
-- `Finite_States_and_Recurrence_v4.tex` — LaTeX source.
-- `Finite_States_and_Recurrence_v4.pdf` — compiled PDF.
+- `Finite_States_and_Recurrence.tex` — LaTeX source.
+- `Finite_States_and_Recurrence.pdf` — compiled PDF.
 - `fig_*` — figures used in the paper.
 
 <img width="2000" height="1042" alt="image" src="https://github.com/user-attachments/assets/095c09d8-7e7b-477a-acc7-c74580b5ea2d" />
