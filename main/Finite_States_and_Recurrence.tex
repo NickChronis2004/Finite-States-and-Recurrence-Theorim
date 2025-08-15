@@ -17,12 +17,22 @@
 \usepackage{mathtools}
 \usepackage{microtype}
 \usepackage{float}
+
+% Nice tables (already loaded above)
+
+% Consistent notation macros (used in the toy table)
+\newcommand{\Smax}{S_{\mathrm{max}}}
+\newcommand{\Trec}{T_{\mathrm{rec}}}
+\newcommand{\TrecA}{T^{(A)}_{\mathrm{rec}}}
+\newcommand{\tscr}{t_{\mathrm{scr}}}
+
+
 \newcommand{\CCR}{Conditional Cosmological Recurrence (CCR)}
 \newcommand{\finD}{finite operational Hilbert-space dimension}
 \newcommand{\cdm}{causal–diamond measure}
 
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
-\graphicspath{{./}}
+\graphicspath{{./}{../assets/}{figs/}{../ancillary files/}}
 
 % Theorem-like environments
 \newtheorem{theorem}{Theorem}
@@ -180,6 +190,84 @@ Scrambling & $\displaystyle t_{\mathrm{scr}}\sim (\beta/2\pi)\ln S$ & Yes (toy m
 Let $A$ be a finite subsystem. Under (A1)--(A2) and standard typicality/ETH hypotheses\,\cite{GoldsteinEtAl2006,Deutsch1991}, for any $\varepsilon>0$ there exist arbitrarily large times $T$ such that $\lVert\rho_A(T)-\rho_A(0)\rVert_1<\varepsilon$. Consequently, macroscopic properties recur far more often than exact microstates.
 \end{proposition}
 
+
+\section{Toy Models \& Metrics (Summary)}
+\label{sec:toymodels}
+
+To complement the theoretical results and provide concrete orders of magnitude, we include two finite-dimensional quantum “toy models” that serve as surrogates for causal patches with a bounded Hilbert-space dimension. The goals are: (i) to exhibit global (microstate) almost–recurrences via the fidelity
+\(
+F(t)=|\langle\psi(0)|\psi(t)\rangle|^2
+\),
+(ii) to quantify \emph{local/coarse–grained} returns via the trace distance on a subsystem \(A\),
+and (iii) to extract a practical scrambling proxy from the entanglement-growth curve.
+
+\paragraph{Models.}
+\textbf{(M1) Finite-$D$ spin chain.}
+Transverse-field Ising model with an additional \(ZZ\) term to avoid fine-tuned revivals:
+\[
+H = J\sum_{i=1}^{N} Z_i Z_{i+1} + h\sum_{i=1}^{N} X_i + g\sum_{i=1}^{N} Z_i,
+\]
+with periodic boundary conditions and parameters \(J=1.0,\; h=1.05,\; g=0.7\).
+System sizes \(N=10,14\) are reported in the main text (up to \(N=16\) in Appendix~\ref{app:methods-toys}).
+
+\noindent
+\textbf{(M2) Discretized free scalar field (1D lattice).}
+Quadratic Hamiltonian on \(L\) sites:
+\[
+H=\tfrac12\sum_{j=1}^{L}\!\big(p_j^2+m^2 q_j^2+\kappa (q_{j+1}-q_j)^2\big),
+\]
+with periodic boundary conditions and mode frequencies
+\(\omega_k^2=m^2+4\kappa\sin^2(\pi k/L)\).
+We use \(m=0.8,\;\kappa=1.0\) and \(L=8,12\).
+
+\paragraph{Metrics and thresholds.}
+Global recurrence time \(T_{\mathrm{rec}}^{(\varepsilon)}\) is the first passage of the fidelity above a tolerance,
+\[
+T_{\mathrm{rec}}^{(\varepsilon)}=\min\{t:\; F(t)\ge 1-\varepsilon\},\qquad \varepsilon\in\{10^{-2},10^{-3}\}.
+\]
+Local/coarse–grained recurrence for a fixed subsystem \(A\) (half-chain) is the first passage of the trace distance below a tolerance,
+\[
+T^{(A)}_{\mathrm{rec}}(\varepsilon_A)=\min\{t:\;\|\rho_A(t)-\rho_A(0)\|_1<\varepsilon_A\},\quad \varepsilon_A=0.1.
+\]
+As a scrambling proxy we use the time for the von Neumann entanglement entropy \(S_{\mathrm{vN}}(t)\) of \(A\) to reach \(90\%\) of its long-time plateau.
+
+\paragraph{Key observations (from our runs).}
+As shown in Fig.\ref{fig:toy_models}, the global fidelity $F(t)$ exhibits rare full recurrences, while the local proxy signal returns more frequently. The corresponding timescales are summarized in Table\ref{tab:toy_summary}.
+For (M1), the global \(T_{\mathrm{rec}}^{(\varepsilon)}\) grows rapidly with \(N\) (consistent with exponential-in-\(D=2^N\) behavior),
+while local returns occur much more frequently, and the scrambling proxy scales approximately linearly in \(N\) (short-range dynamics).
+For (M2), on-site autocorrelations display clear near-revivals due to the finite mode set; global near-recurrence becomes sharply delayed as \(L\) increases, whereas coarse proxies recur on shorter times.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.48\textwidth]{figs/fig_spin_fidelity.png}
+    \includegraphics[width=0.48\textwidth]{figs/fig_spin_localrec.png}
+    \caption{
+\textbf{Toy finite-dimensional model results.} 
+\textbf{Left:} Global fidelity $F(t)$ for a random-spectrum model with $D=128$, threshold $\varepsilon=10^{-2}$. 
+\textbf{Right:} Local recurrence proxy from a few-mode model with $M=24$, threshold $\varepsilon_A=0.1$.
+The global signal exhibits rare full recurrences, while the local proxy shows much more frequent returns.
+    }
+    \label{fig:toy_models}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \input{ancillary_files/table_toy_summary.tex}
+    \caption{
+Summary of recurrence and scrambling times for the toy finite-dimensional model.  
+$\Trec^{(10^{-2})}$: first global return time with fidelity threshold $\varepsilon = 10^{-2}$.  
+$\Trec^{(10^{-3})}$: same with $\varepsilon = 10^{-3}$.  
+$\TrecA(\varepsilon_A=0.1)$: first local return time for the proxy signal with threshold $\varepsilon_A = 0.1$.  
+$\tscr$: scrambling time defined as the earliest $t$ where the proxy signal reaches $90\%$ of its late-time plateau.
+Toy model values from 1000 realizations; see Appendix~\ref{app:methods-toys}.
+    }
+    \label{tab:toy_summary}
+\end{table}
+
+Full details of the toy model construction, parameter choices, and numerical procedures are given in Appendix~\ref{app:methods-toys}.
+
+
+
 \section{Measure and Predictivity}\label{sec:measure}
 \paragraph{Why ambiguity arises.} In eternally inflating or infinitely extended scenarios, \emph{everything} that can happen tends to happen infinitely many times. Raw frequencies become $\infty/\infty$, so probabilities are undefined without a regularization/cutoff (a \emph{measure}). Different cutoffs induce different weights---hence the measure problem.
 
@@ -227,14 +315,14 @@ then $\Gamma_{{\rm BB},i}$ are double-exponentially suppressed, and even minute 
 
 \begin{figure}[h]
   \centering
-\includegraphics[width=0.6\linewidth]{fig_causal_diamond}
+\includegraphics[width=0.6\linewidth]{figs/fig_causal_diamond.png}
   \caption{\textbf{Causal diamond schematic.} Local/causal measure region for a finite-resolution observer.}
 \end{figure}
 
 \begin{figure}[h]
   \centering
-\includegraphics[width=0.48\linewidth]{fig_fidelity}
-\includegraphics[width=0.48\linewidth]{fig_trace_distance}
+\includegraphics[width=0.48\linewidth]{figs/fig_fidelity.png}
+\includegraphics[width=0.48\linewidth]{figs/fig_trace_distance.png}
   \caption{\textbf{Recurrence schematic.} Left: fidelity $F(t)=|\langle\psi(0)|\psi(t)\rangle|^2$ for a random finite-dimensional Hamiltonian showing quasi-periodic returns. Right: local (coarse-grained) recurrence via trace distance $\|\rho_A(t)-\rho_A(0)\|_1$ in a 4-qubit toy model.}
 \end{figure}
 
@@ -540,26 +628,48 @@ We briefly review selected works that directly motivate or constrain our Conditi
 Our contribution is \emph{not} a new recurrence law. The novelty is three–fold:
 
 \paragraph{(i) Micro-to-macro bridge to finite $D$.}
-Prior works motivate holographic/entropic caps (Bekenstein–Hawking, covariant bounds, de Sitter entropy) \cite{bekenstein1973black,hawking1975particle,bousso1999covariant}.
+Prior works motivate holographic/entropic caps (Bekenstein–Hawking, covariant bounds, de Sitter entropy) \cite{Bekenstein1973,Hawking1975,Bousso1999}.
 We supply an explicit microcanonical counting argument under a gravitational energy cap that yields a \emph{finite operational} Hilbert-space dimension per causal patch (Prop.~\ref{prop:finiteD}; App.~\ref{app:microcanonical}).
 This makes recurrence a \emph{derived} consequence of finiteness rather than an independent cosmological assumption.
 
 \paragraph{(ii) Conditional framing with falsifiability.}
-Unlike typical discussions of cosmological recurrence \cite{dyson2002disturbing}, we make recurrence \emph{conditional} on (A1): if future QG shows $D=\infty$ for causal patches, our CCR framework is falsified \emph{as stated}. 
+Unlike typical discussions of cosmological recurrence \cite{DysonKlebanSusskind2002}, we make recurrence \emph{conditional} on (A1): if future QG shows $D=\infty$ for causal patches, our CCR framework is falsified \emph{as stated}. 
 This gives a clean physics “if–then”: the “if” (finite information bound) is empirical/theoretical physics, the “then” (almost periodicity/recurrence) is rigorous mathematics.
 
 \paragraph{(iii) Unified local measure with a single no–BB constraint.}
-To address predictivity, we advocate a minimalistic causal–diamond measure with xerographic typicality plus one canonical no–Boltzmann–Brain constraint, avoiding volume–weighting pathologies and BB domination \cite{dyson2002disturbing,page2008universe}.
+To address predictivity, we advocate a minimalistic causal–diamond measure with xerographic typicality plus one canonical no–Boltzmann–Brain constraint, avoiding volume–weighting pathologies and BB domination \cite{DysonKlebanSusskind2002,Page2007}.
 This is a compact prescription rather than an ad-hoc casework.
 
 \noindent In short: (finite operational $D$) $+$ (unitary dynamics) $\Rightarrow$ CCR, with a concrete micro–to–macro bridge and a lean measure choice that avoids known pitfalls.
 % ============================
 
 
-
 \bibliographystyle{unsrt}
 \bibliography{references}
 
 \nocite{*}
+
+\section*{Appendix E: Methods for Toy Models}
+\label{app:methods-toys}
+
+\paragraph{Global signal (finite-$D$).}
+We generate a random energy spectrum $\{E_j\}_{j=1}^D$ (band-limited) and assign weights $\{p_j\}$ drawn from a Dirichlet distribution, representing the squared amplitudes $|c_j|^2$ of the initial state.
+The global fidelity is computed as
+\[
+F(t) = \left| \sum_{j=1}^D p_j \, e^{-i E_j t} \right|^2 .
+\]
+The global recurrence time $\Trec^{(\varepsilon)}$ is defined as the first $t>0$ such that $F(t) \geq 1-\varepsilon$, with $\varepsilon \in \{10^{-2}, 10^{-3}\}$.
+
+\paragraph{Local proxy.}
+To model coarse-grained or subsystem returns, we use a reduced set of $M$ modes $\{\omega_k\}$ with weights $\{q_k\}$, and compute
+\[
+\mathcal{R}_A(t) = \left| \sum_{k=1}^M q_k \, e^{-i \omega_k t} \right| .
+\]
+The local recurrence time $\TrecA(\varepsilon_A)$ is the first $t>0$ where $\mathcal{R}_A(t) \leq \varepsilon_A$ (here $\varepsilon_A = 0.1$).
+The scrambling time $\tscr$ is taken as the earliest $t$ when $\mathcal{R}_A(t)$ reaches $90\%$ of its late-time plateau value.
+
+\paragraph{Numerics.}
+All times are obtained from discrete time sampling with $\Delta t = 0.1$ up to $t_{\max} = 100$, using ensembles of $10^3$ realizations to estimate median values.
+
 
 \end{document}
