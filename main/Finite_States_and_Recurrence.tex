@@ -258,7 +258,7 @@ Local/coarse–grained recurrence for a fixed subsystem \(A\) (half-chain) is th
 As a scrambling proxy, we use the time for the von Neumann entanglement entropy \(S_{\mathrm{vN}}(t)\) of \(A\) to reach \(90\%\) of its long-time plateau.
 
 \paragraph{Key observations (from our runs).}
-As shown in Fig.\ref{fig:toy_models}, the global fidelity $F(t)$ exhibits rare full recurrences, while the local proxy signal returns more frequently. The corresponding timescales are summarized in Table\ref{tab:toy_summary}.
+As shown in Fig.~\ref{fig:toy_models}, the global fidelity $F(t)$ exhibits rare full recurrences, while the local proxy signal returns more frequently. The corresponding timescales are summarized in Table\ref{tab:toy_summary}.
 For (M1), the global \(\Trec^{(\varepsilon)}\) grows rapidly with \(N\) (consistent with exponential-in-\(D=2^N\) behavior),
 while local returns occur much more frequently, and the scrambling proxy scales approximately linearly in \(N\) (short-range dynamics).
 For (M2), on-site autocorrelations display clear near-revivals due to the finite mode set; global near-recurrence becomes sharply delayed as \(L\) increases, whereas coarse proxies recur on shorter times.
@@ -295,18 +295,18 @@ Full details of the toy model construction, parameter choices, and numerical pro
 
 
 \section{Measure and Predictivity}\label{sec:measure}
-\paragraph{Why ambiguity arises.} In eternally inflating or infinitely extended scenarios, \emph{everything} that can happen tends to happen infinitely many times. Raw frequencies become $\infty/\infty$, so probabilities are undefined without a regularization/cutoff (a \emph{measure}). Different cutoffs induce different weights---hence the measure problem (see Fig.~\ref{fig:global-vs-diamond} for a comparison).
+\paragraph{Why ambiguity arises.} In eternally inflating or infinitely extended scenarios, \emph{everything} that can happen tends to happen infinitely many times. Raw frequencies become $\infty/\infty$, so probabilities are undefined without a regularization/cutoff (a \emph{measure}). Different cutoffs induce different weights---hence the measure problem.
 
-\paragraph{Prescription.} We advocate a \emph{causal-diamond} (local) measure combined with \emph{xerographic typicality} over ordinary observers, and a single canonical \emph{no--Boltzmann--Brain} constraint:
+\paragraph{Prescription.} We advocate a \emph{causal-diamond} (local) measure combined with \emph{xerographic typicality} over ordinary observers, and a single canonical \emph{no--Boltzmann--Brain} constraint (Fig.~\ref{fig:diamond-measure}):
 \begin{equation}
  \Gamma_{\rm decay} \gg \Gamma_{\rm BB} \sim H^4\,e^{-S_{\rm BB}},\qquad 
  S_{\rm BB}\sim \frac{E_{\rm BB}}{k_B T_{\rm dS}},\quad T_{\rm dS}=\frac{H}{2\pi},
 \end{equation}
-equivalently $\tau_{\rm decay}\ll \tau_{\rm BB}$. This avoids volume biases and Boltzmann-brain domination in eternal-de Sitter scenarios and restores finite, stable probabilities\,\cite{DysonKlebanSusskind2002,Page2007} (see Fig.~\ref{fig:diamond-measure}).
+equivalently $\tau_{\rm decay}\ll \tau_{\rm BB}$. This avoids volume biases and Boltzmann-brain domination in eternal-de Sitter scenarios and restores finite, stable probabilities\,\cite{DysonKlebanSusskind2002,Page2007}.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.85\linewidth]{figures/fig_causal_diamond_measure.pdf}
+  \includegraphics[width=0.85\linewidth]{figs/fig_causal_diamond_measure.pdf}
   \caption{Causal–diamond measure with two metastable vacua. 
   Transitions $\kappa_{12}, \kappa_{21}$ occur within the diamond, 
   while decays to terminal vacua proceed with rates $\Gamma_{\mathrm{decay},i}$. 
@@ -329,11 +329,11 @@ Within a causal diamond, weight events by local occurrence rates. Boltzmann brai
 \[
  H_1=10 H_2,\quad S_{{\rm BB},1}=10^{40},\quad S_{{\rm BB},2}=10^{42},\quad \kappa_{12}=10^{-100}\,H_1,\quad \kappa_{21}=10^{-200}\,H_2,
 \]
-then $\Gamma_{{\rm BB},i}$ are double-exponentially suppressed, and even minute vacuum-decay rates satisfy $\Gamma_{{\rm decay},i}\!\gg\!\Gamma_{{\rm BB},i}$. Diamond-weighted observer counts are dominated by ordinary observers prior to decay, avoiding BB dominance while yielding finite, stable probabilities.
+then $\Gamma_{{\rm BB},i}$ are double-exponentially suppressed, and even minute vacuum-decay rates satisfy $\Gamma_{{\rm decay},i}\!\gg\!\Gamma_{{\rm BB},i}$. Diamond-weighted observer counts are dominated by ordinary observers prior to decay, avoiding BB dominance while yielding finite, stable probabilities. See Fig.~\ref{fig:global-vs-diamond} for a comparison of this approach with global volume-weighted measures.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.95\linewidth]{figures/fig_global_vs_diamond.pdf}
+  \includegraphics[width=0.95\linewidth]{figs/fig_global_vs_diamond.pdf}
   \caption{Comparison of global (volume–weighted) versus causal–diamond measures. 
   In global cutoffs, ever-expanding spacetime volume leads to $\infty/\infty$ ambiguities 
   and Boltzmann–brain domination. 
@@ -362,7 +362,7 @@ then $\Gamma_{{\rm BB},i}$ are double-exponentially suppressed, and even minute 
 \includegraphics[width=0.32\linewidth]{fig_energy_levels}
 \includegraphics[width=0.32\linewidth]{fig_k_modes}
 \includegraphics[width=0.32\linewidth]{fig_holographic_bound}
-  \caption{\textbf{Electron $\to$ Cosmos bridge.} (Left) discrete energy levels in a 1D infinite well; (Middle) discrete field modes in a finite box; (Right) holographic entropy bound scaling with area.}
+  \caption{Electron $\to$ Cosmos bridge. (Left) discrete energy levels in a 1D infinite well; (Middle) discrete field modes in a finite box; (Right) holographic entropy bound scaling with area.}
 \end{figure}
 
 
@@ -371,7 +371,7 @@ then $\Gamma_{{\rm BB},i}$ are double-exponentially suppressed, and even minute 
   \centering
 \includegraphics[width=0.48\linewidth]{figs/fig_fidelity.png}
 \includegraphics[width=0.48\linewidth]{figs/fig_trace_distance.png}
-  \caption{\textbf{Recurrence schematic.} Left: fidelity $F(t)=|\langle\psi(0)|\psi(t)\rangle|^2$ for a random finite-dimensional Hamiltonian showing quasi-periodic returns. Right: local (coarse-grained) recurrence via trace distance $\|\rho_A(t)-\rho_A(0)\|_1$ in a 4-qubit toy model.}
+  \caption{Recurrence schematic. Left: fidelity $F(t)=|\langle\psi(0)|\psi(t)\rangle|^2$ for a random finite-dimensional Hamiltonian showing quasi-periodic returns. Right: local (coarse-grained) recurrence via trace distance $\|\rho_A(t)-\rho_A(0)\|_1$ in a 4-qubit toy model.}
 \end{figure}
 
 \paragraph{Observational handles (final remark).}
@@ -726,7 +726,7 @@ This is a compact prescription rather than an ad-hoc casework.
 
 \begin{figure}[H]
     \centering
-\includegraphics[width=0.9\linewidth]{CCR_flowchart}
+\includegraphics[width=0.9\linewidth]{ancillary_files/CCR_flowchart.pdf}
     \caption{Flow chart illustrating the logical structure of the CCR Theorem, from holographic bounds to conditional recurrences and their cosmological implications.}
     \label{fig:CCR_flowchart}
 \end{figure}
