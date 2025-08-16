@@ -295,14 +295,28 @@ Full details of the toy model construction, parameter choices, and numerical pro
 
 
 \section{Measure and Predictivity}\label{sec:measure}
-\paragraph{Why ambiguity arises.} In eternally inflating or infinitely extended scenarios, \emph{everything} that can happen tends to happen infinitely many times. Raw frequencies become $\infty/\infty$, so probabilities are undefined without a regularization/cutoff (a \emph{measure}). Different cutoffs induce different weights---hence the measure problem.
+\paragraph{Why ambiguity arises.} In eternally inflating or infinitely extended scenarios, \emph{everything} that can happen tends to happen infinitely many times. Raw frequencies become $\infty/\infty$, so probabilities are undefined without a regularization/cutoff (a \emph{measure}). Different cutoffs induce different weights---hence the measure problem (see Fig.~\ref{fig:global-vs-diamond} for a comparison).
 
 \paragraph{Prescription.} We advocate a \emph{causal-diamond} (local) measure combined with \emph{xerographic typicality} over ordinary observers, and a single canonical \emph{no--Boltzmann--Brain} constraint:
 \begin{equation}
  \Gamma_{\rm decay} \gg \Gamma_{\rm BB} \sim H^4\,e^{-S_{\rm BB}},\qquad 
  S_{\rm BB}\sim \frac{E_{\rm BB}}{k_B T_{\rm dS}},\quad T_{\rm dS}=\frac{H}{2\pi},
 \end{equation}
-equivalently $\tau_{\rm decay}\ll \tau_{\rm BB}$. This avoids volume biases and Boltzmann-brain domination in eternal-de Sitter scenarios and restores finite, stable probabilities\,\cite{DysonKlebanSusskind2002,Page2007}.
+equivalently $\tau_{\rm decay}\ll \tau_{\rm BB}$. This avoids volume biases and Boltzmann-brain domination in eternal-de Sitter scenarios and restores finite, stable probabilities\,\cite{DysonKlebanSusskind2002,Page2007} (see Fig.~\ref{fig:diamond-measure}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\linewidth]{figures/fig_causal_diamond_measure.pdf}
+  \caption{Causal–diamond measure with two metastable vacua. 
+  Transitions $\kappa_{12}, \kappa_{21}$ occur within the diamond, 
+  while decays to terminal vacua proceed with rates $\Gamma_{\mathrm{decay},i}$. 
+  Boltzmann brain production arises with rates $\Gamma_{\mathrm{BB},i}$ (dotted arrows). 
+  The canonical constraint $\Gamma_{\mathrm{decay}} \gg \Gamma_{\mathrm{BB}}$ (Eq.~(3)) 
+  prevents BB domination and ensures stable probabilities. 
+  Weighting is strictly local within the causal diamond, with xerographic typicality 
+  applied over ordinary observers.}
+  \label{fig:diamond-measure}
+\end{figure}
 
 \paragraph{Implementation.} In eternal-inflation models, evolve rate equations for vacuum populations $p_i$ with transition rates $\kappa_{ij}$ and apply local weighting within a causal diamond. In cyclic settings, count per-cycle events within the diamond under $\varepsilon$-coarse-graining. See the worked two-vacuum toy model below.
 
@@ -316,6 +330,18 @@ Within a causal diamond, weight events by local occurrence rates. Boltzmann brai
  H_1=10 H_2,\quad S_{{\rm BB},1}=10^{40},\quad S_{{\rm BB},2}=10^{42},\quad \kappa_{12}=10^{-100}\,H_1,\quad \kappa_{21}=10^{-200}\,H_2,
 \]
 then $\Gamma_{{\rm BB},i}$ are double-exponentially suppressed, and even minute vacuum-decay rates satisfy $\Gamma_{{\rm decay},i}\!\gg\!\Gamma_{{\rm BB},i}$. Diamond-weighted observer counts are dominated by ordinary observers prior to decay, avoiding BB dominance while yielding finite, stable probabilities.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures/fig_global_vs_diamond.pdf}
+  \caption{Comparison of global (volume–weighted) versus causal–diamond measures. 
+  In global cutoffs, ever-expanding spacetime volume leads to $\infty/\infty$ ambiguities 
+  and Boltzmann–brain domination. 
+  The causal–diamond prescription restricts to a finite local region, 
+  counts ordinary observers before decay, and imposes 
+  $\Gamma_{\mathrm{decay}} \gg \Gamma_{\mathrm{BB}}$, yielding stable probabilities.}
+  \label{fig:global-vs-diamond}
+\end{figure}
 
 \section{Information/Computation Bounds (CS Viewpoint)}
 \paragraph{Bit budget.} The maximum reliably distinguishable information inside a causal patch obeys $\log_2 D \lesssim \Smax/(\ln 2) \le A/(4\ell_P^2\ln 2)$ bits.
@@ -339,11 +365,7 @@ then $\Gamma_{{\rm BB},i}$ are double-exponentially suppressed, and even minute 
   \caption{\textbf{Electron $\to$ Cosmos bridge.} (Left) discrete energy levels in a 1D infinite well; (Middle) discrete field modes in a finite box; (Right) holographic entropy bound scaling with area.}
 \end{figure}
 
-\begin{figure}[h]
-  \centering
-\includegraphics[width=0.6\linewidth]{figs/fig_causal_diamond.png}
-  \caption{\textbf{Causal diamond schematic.} Local/causal measure region for a finite-resolution observer.}
-\end{figure}
+
 
 \begin{figure}[h]
   \centering
