@@ -21,10 +21,10 @@
 % Nice tables (already loaded above)
 
 % Consistent notation macros (used in the toy table)
-\newcommand{\Smax}{S_{\mathrm{max}}}
-\newcommand{\Trec}{T_{\mathrm{rec}}}
-\newcommand{\TrecA}{T^{(A)}_{\mathrm{rec}}}
-\newcommand{\tscr}{t_{\mathrm{scr}}}
+\newcommand{\Smax}{S_{\max}}
+\newcommand{\Trec}{T_{\text{rec}}}
+\newcommand{\TrecA}{T^{(A)}_{\text{rec}}}
+\newcommand{\tscr}{t_{\text{scr}}}
 
 
 \newcommand{\CCR}{Conditional Cosmological Recurrence (CCR)}
@@ -53,10 +53,31 @@
 \begin{abstract}
 We study \emph{Conditional Cosmological Recurrence} (CCR): if a causal patch admits a finite operational Hilbert space dimension $D$ (as motivated by holographic/entropy bounds), then unitary quantum dynamics imply almost–periodic evolution and hence recurrences. 
 Our contribution is to make this implication explicit with a micro–to–macro bridge: (i) finite regions discretize field modes; (ii) gravitational bounds cap entropy and energy; therefore (iii) the accessible state count is finite, yielding CCR. 
-We differentiate global microstate recurrences (double–exponential timescales in $S_{\max}$) from operationally relevant coarse–grained returns (exponential in subsystem entropy), and we give conservative timescale estimates. 
+We differentiate global microstate recurrences (double–exponential timescales in $\Smax$) from operationally relevant coarse–grained returns (exponential in subsystem entropy), and we give conservative timescale estimates. 
 For predictivity in eternally inflating settings, we use a causal–diamond measure with xerographic typicality and a single no–Boltzmann–Brain constraint, avoiding volume–weighting pathologies. 
 Scope is \emph{explicitly conditional}: if future quantum gravity demonstrates $D=\infty$ for causal patches, CCR is falsified.
 \end{abstract}
+
+
+\noindent\textbf{Keywords:} 
+Cosmological Recurrence; Finite Hilbert Space; Holographic Bounds; 
+Causal Patch; Quantum Recurrence; Boltzmann Brains
+
+
+\section*{Introductory Note}
+
+Cosmology often studies regions of the universe called \emph{causal patches}---the finite
+portion of spacetime that a single observer can in principle access. Within such a patch,
+gravity imposes strict limits on how much information can be stored; these are known as
+\emph{holographic or entropy bounds}, and they suggest that only a limited number of
+physically distinct configurations can exist. This leads to a striking consequence called
+\emph{recurrence}: if the set of possible states is finite and the system evolves according to
+quantum mechanics, then it must eventually return arbitrarily close to an earlier
+configuration in the finite-$D$ case. In practice, such returns occur on unimaginably long timescales, but the
+concept is important: the universe may not evolve in endlessly novel ways, but could recycle
+through states. In this work, we explore this possibility in a strictly conditional sense:
+recurrence follows mathematically \emph{if} holographic bounds do imply a finite state
+budget for causal patches.
 
 
 \section*{Originality and Scope}
@@ -92,7 +113,7 @@ Let $E_{\rm BH}(R)=\frac{c^4 R}{2G}$ be the energy of a Schwarzschild black hole
 Any state whose total energy localized within the region exceeds $E_{\rm BH}(R)$ collapses, and the
 Bekenstein--Hawking bound yields
 \begin{equation}
-S_{\max}\;\le\; \frac{k_B A}{4\ell_P^2}
+\Smax\;\le\; \frac{k_B A}{4\ell_P^2}
 =\frac{k_B\,4\pi R^2}{4\ell_P^2},\qquad \ell_P^2=\frac{\hbar G}{c^3}.
 \end{equation}
 \end{lemma}
@@ -102,7 +123,8 @@ Consider the Fock space built from the discrete IR modes and impose the microcan
 $\sum_{\mathbf{k}} n_{\mathbf{k}}\,\hbar\omega_{\mathbf{k}}\le E_{\rm BH}(R)$. 
 Then the number of distinct Fock states below this cap is finite. 
 Moreover, any operationally distinguishable state family within the region obeys 
-$\log D \le S_{\max}/k_B \lesssim A/(4\ell_P^2)$, so the accessible Hilbert space dimension $D$ is finite.
+$\log D \le \Smax/k_B \lesssim A/(4\ell_P^2)$, so the accessible Hilbert space dimension $D$ is finite. Here $D$ denotes the effective Hilbert space dimension\footnote{That is, the number of independent quantum states consistent with the entropy bound.}.
+
 \end{proposition}
 \noindent(See Appendix~B for an explicit microcanonical counting illustration under a gravitational cap.)
 
@@ -110,7 +132,7 @@ $\log D \le S_{\max}/k_B \lesssim A/(4\ell_P^2)$, so the accessible Hilbert spac
 Finite volume $\Rightarrow$ discrete $\mathbf{k}$ (Lemma~\ref{lem:IR}). The energy cap forbids arbitrarily many high-frequency quanta (Lemma~\ref{lem:UV}). 
 Since $\omega_{\mathbf{k}}\ge c|\mathbf{k}|$ and the number of modes below any cutoff $\Lambda$ is finite, the integer solutions 
 $\{n_{\mathbf{k}}\}$ of $\sum n_{\mathbf{k}}\hbar\omega_{\mathbf{k}}\le E_{\rm BH}$ are finite. 
-Operational distinguishability is limited by the entropy bound, giving $\log D \le S_{\max}/k_B$.
+Operational distinguishability is limited by the entropy bound, giving $\log D \le \Smax/k_B$.
 \end{proof}
 
 \textbf{Physical intuition:} A finite spatial region implies discrete field modes (analogous to a particle in a box). 
@@ -121,7 +143,7 @@ These two constraints together limit the total number of quantum states, implyin
 \section{Assumptions and Definitions}
 We consider a causal patch (the region causally connected to an observer) with horizon area $A$ and adopt:
 \begin{description}[leftmargin=1.5em,labelsep=0.5em]
-  \item[(A1) Finite information bound:] $S_{\max} \leq k_B A/4\ell^2_P$ so $D = \dim \mathcal{H} < \infty$ (motivated by Bekenstein–Hawking/Gibbons–Hawking).
+  \item[(A1) Finite information bound:] $\Smax \leq k_B A/4\ell^2_P$ so $D = \dim \mathcal{H} < \infty$ (motivated by Bekenstein–Hawking/Gibbons–Hawking).
   \item[(A2) Unitary dynamics:] $|\psi(t)\rangle=e^{-iHt}|\psi(0)\rangle$, self-adjoint $H$.
   \item[(A3) Sector mixing (optional):] Dynamics does not confine evolutions to a null-measure subset within the relevant superselection sector.
   \item[(A4) Finite-resolution observers:] Macrostates identified up to trace-distance tolerance $\varepsilon>0$ on local density matrices.
@@ -133,7 +155,7 @@ Under (A1)--(A2), for any initial pure state $|\psi(0)\rangle$ and any $\varepsi
 \begin{equation}
  F(T):=|\langle\psi(0)|\psi(T)\rangle|^2 > 1-\varepsilon.
 \end{equation}
-Moreover, recurrence times obey the lower-bound behavior in Remark~\ref{rem:times}; any single-exponential-in-$S_{\max}$ shorthand is only schematic.
+Moreover, recurrence times obey the lower-bound behavior in Remark~\ref{rem:times}; any single-exponential-in-$\Smax$ shorthand is only schematic.
 \end{theorem}
 \begin{proof}[Proof sketch]
 Finite $D$ implies a discrete spectrum and almost-periodic evolution (Bocchieri--Loinger\,\cite{BocchieriLoinger1957}). 
@@ -150,21 +172,25 @@ This is the quantum analog of Poincaré recurrence.}
 \paragraph{Recurrence time (careful statement).}
 We will use “recurrence time” in the usual almost–periodicity sense. Model–independently, generic recurrence times grow at least \emph{exponentially} with the Hilbert–space dimension $D$:
 \[
-T_{\rm rec} \;\gtrsim\; t_{\rm micro}\,\exp\!\big(c\,D\big),
+\Trec \;\gtrsim\; t_{\rm micro}\,\exp\!\big(c\,D\big),
 \]
 for some $c=O(1)$ that depends on Diophantine properties of spectral gaps and on the chosen tolerance.
-Since $D \lesssim \exp(S_{\max}/k_B)$ by the holographic/entropic cap, a conservative expectation is
+Since $D \lesssim \exp(\Smax/k_B)$\footnote{This is the standard holographic entropy bound: the maximum number of accessible quantum states cannot exceed the exponential of the maximal entropy.} by the holographic/entropic cap, a conservative expectation is
 \[
-T_{\rm rec} \;\gtrsim\; \exp\!\Big\{\alpha\,\exp(S_{\max}/k_B)\Big\},
+\Trec \;\gtrsim\; \exp\!\Big\{\alpha\,\exp(\Smax/k_B)\Big\},
 \]
 i.e. \emph{double–exponential} in the entropy (up to polynomial prefactors in microscopic scales).
-Any single–exponential–in–$S_{\max}$ expression (e.g. $T_{\rm rec}\sim t_{\rm micro}\,e^{S_{\max}/k_B}$) should therefore be read as a schematic, order–of–magnitude placeholder rather than a sharp scaling law.
+Any single–exponential–in–$\Smax$ expression (e.g. $\Trec\sim t_{\rm micro}\,e^{\Smax/k_B}$) should therefore be read as a schematic, order–of–magnitude placeholder rather than a sharp scaling law. For illustration, even a toy system with dimension $D=10^3$ already yields a 
+recurrence time of order $T_{\text{rec}} \sim e^{10^3} \approx 10^{434}$ steps, 
+while for cosmological entropies ($D \sim 10^{120}$) the scale becomes 
+incomprehensibly large ($T_{\text{rec}} \sim e^{10^{120}}$).
+
 
 \begin{remark}[Global vs.\ local/coarse-grained returns]\label{rem:times}
-Global microstate recurrences scale at least double–exponentially in $S_{\max}$, 
+Global microstate recurrences scale at least double–exponentially in $\Smax$, 
 while coarse–grained recurrences of a finite subsystem $A$ scale roughly as 
 $\exp\{c\,S_A\}$ for fixed tolerance $\varepsilon$. 
-Scrambling times in fast–scramblers are $t_{\mathrm{scr}}\sim (\beta/2\pi)\ln S$.
+Scrambling times in fast–scramblers are $\tscr\sim (\beta/2\pi)\ln S$.
 Only the latter two have any realistic operational meaning; see Table~\ref{tab:times}.
 \end{remark}
 
@@ -176,9 +202,9 @@ Only the latter two have any realistic operational meaning; see Table~\ref{tab:t
 \toprule
 Regime & Timescale & Operational? \\
 \midrule
-Global microstate & $\displaystyle T^{\mathrm{(global)}}_{\mathrm{rec}}\sim \exp\{\alpha\,e^{S_{\max}}\}$ & No \\
-Coarse–grained $A$ & $\displaystyle T^{(A)}_{\mathrm{rec}}(\varepsilon)\sim \exp\{c\,S_A\}$ & Typically No \\
-Scrambling & $\displaystyle t_{\mathrm{scr}}\sim (\beta/2\pi)\ln S$ & Yes (toy models) \\
+Global microstate & $\displaystyle T^{\mathrm{(global)}}_{\text{rec}}\sim \exp\{\alpha\,e^{\Smax}\}$ & No \\
+Coarse–grained $A$ & $\displaystyle \TrecA(\varepsilon)\sim \exp\{c\,S_A\}$ & Typically No \\
+Scrambling & $\displaystyle \tscr\sim (\beta/2\pi)\ln S$ & Yes (toy models) \\
 \bottomrule
 \end{tabular}
 \label{tab:times}
@@ -221,19 +247,19 @@ with periodic boundary conditions and mode frequencies
 We use \(m=0.8,\;\kappa=1.0\) and \(L=8,12\).
 
 \paragraph{Metrics and thresholds.}
-Global recurrence time \(T_{\mathrm{rec}}^{(\varepsilon)}\) is the first passage of the fidelity above a tolerance,
+Global recurrence time \(\Trec^{(\varepsilon)}\) is the first passage of the fidelity above a tolerance,
 \[
-T_{\mathrm{rec}}^{(\varepsilon)}=\min\{t:\; F(t)\ge 1-\varepsilon\},\qquad \varepsilon\in\{10^{-2},10^{-3}\}.
+\Trec^{(\varepsilon)}=\min\{t:\; F(t)\ge 1-\varepsilon\},\qquad \varepsilon\in\{10^{-2},10^{-3}\}.
 \]
 Local/coarse–grained recurrence for a fixed subsystem \(A\) (half-chain) is the first passage of the trace distance below a tolerance,
 \[
-T^{(A)}_{\mathrm{rec}}(\varepsilon_A)=\min\{t:\;\|\rho_A(t)-\rho_A(0)\|_1<\varepsilon_A\},\quad \varepsilon_A=0.1.
+\TrecA(\varepsilon_A)=\min\{t:\;\|\rho_A(t)-\rho_A(0)\|_1<\varepsilon_A\},\quad \varepsilon_A=0.1.
 \]
-As a scrambling proxy we use the time for the von Neumann entanglement entropy \(S_{\mathrm{vN}}(t)\) of \(A\) to reach \(90\%\) of its long-time plateau.
+As a scrambling proxy, we use the time for the von Neumann entanglement entropy \(S_{\mathrm{vN}}(t)\) of \(A\) to reach \(90\%\) of its long-time plateau.
 
 \paragraph{Key observations (from our runs).}
 As shown in Fig.\ref{fig:toy_models}, the global fidelity $F(t)$ exhibits rare full recurrences, while the local proxy signal returns more frequently. The corresponding timescales are summarized in Table\ref{tab:toy_summary}.
-For (M1), the global \(T_{\mathrm{rec}}^{(\varepsilon)}\) grows rapidly with \(N\) (consistent with exponential-in-\(D=2^N\) behavior),
+For (M1), the global \(\Trec^{(\varepsilon)}\) grows rapidly with \(N\) (consistent with exponential-in-\(D=2^N\) behavior),
 while local returns occur much more frequently, and the scrambling proxy scales approximately linearly in \(N\) (short-range dynamics).
 For (M2), on-site autocorrelations display clear near-revivals due to the finite mode set; global near-recurrence becomes sharply delayed as \(L\) increases, whereas coarse proxies recur on shorter times.
 
@@ -292,7 +318,7 @@ Within a causal diamond, weight events by local occurrence rates. Boltzmann brai
 then $\Gamma_{{\rm BB},i}$ are double-exponentially suppressed, and even minute vacuum-decay rates satisfy $\Gamma_{{\rm decay},i}\!\gg\!\Gamma_{{\rm BB},i}$. Diamond-weighted observer counts are dominated by ordinary observers prior to decay, avoiding BB dominance while yielding finite, stable probabilities.
 
 \section{Information/Computation Bounds (CS Viewpoint)}
-\paragraph{Bit budget.} The maximum reliably distinguishable information inside a causal patch obeys $\log_2 D \lesssim S_{\max}/(\ln 2) \le A/(4\ell_P^2\ln 2)$ bits.
+\paragraph{Bit budget.} The maximum reliably distinguishable information inside a causal patch obeys $\log_2 D \lesssim \Smax/(\ln 2) \le A/(4\ell_P^2\ln 2)$ bits.
 \paragraph{Operation rate.} Given mean energy $E$, Margolus--Levitin/Lloyd imply $\dot N_{\rm ops} \le 2E/(\pi\hbar)$; Landauer gives $E_{\rm erase}\ge k_B T \ln 2$. Together with collapse thresholds, these define a feasible compute envelope per patch\,\cite{MargolusLevitin1998,Lloyd2000}.
 
 \section{Observational Handles (Indirect)}
@@ -326,6 +352,14 @@ then $\Gamma_{{\rm BB},i}$ are double-exponentially suppressed, and even minute 
   \caption{\textbf{Recurrence schematic.} Left: fidelity $F(t)=|\langle\psi(0)|\psi(t)\rangle|^2$ for a random finite-dimensional Hamiltonian showing quasi-periodic returns. Right: local (coarse-grained) recurrence via trace distance $\|\rho_A(t)-\rho_A(0)\|_1$ in a 4-qubit toy model.}
 \end{figure}
 
+\paragraph{Observational handles (final remark).}
+It should be emphasized that no direct observational constraints currently exist on the
+Hilbert-space dimension $D$ or on $\Smax$ of a causal patch. Existing limits are only
+\emph{indirect}: for example, from non-observation of non-trivial cosmic topology in the CMB,
+or from lower bounds on vacuum decay rates. Such considerations motivate the conditional
+framing adopted here, but they do not provide a direct empirical handle on the finiteness
+assumption.
+
 
 \section{Rigour Addendum: What is Theorem-level vs Assumptions}\label{sec:rigour-addendum}
 The CCR statement is mathematically rigorous \emph{conditional} on (A1)--(A2). In particular:
@@ -344,10 +378,47 @@ If (A1) is violated — for example:
 \begin{itemize}
     \item The holographic bound does not apply to cosmological causal patches,
     \item The underlying theory allows unbounded entropy (e.g. an infinite number of field modes without a physical cutoff),
+
+    \paragraph{Infinite Hilbert-space scenarios (with minimal math).}
+There are well-motivated settings in which the operational state space inside a causal region
+is effectively infinite, invalidating CCR's finite-$D$ premise:
+
+\begin{itemize}
+    \item \textbf{Continuum QFT without cutoffs (infinite volume).}
+    In a continuum field theory on a spatial region of volume $V$, the number of modes below a UV scale $\Lambda$
+    scales as
+    \[
+      M(\Lambda) \sim \frac{V}{(2\pi)^3}\,\frac{4\pi}{3}\,\Lambda^3.
+    \]
+    For non-compact or infinite-volume backgrounds $V\to\infty$, one gets $M(\Lambda)\to\infty$ even at finite~$\Lambda$,
+    hence the Fock space dimension is unbounded. Without a gravitational entropy cap, there is no finite
+    operational state budget and quantum almost-periodicity theorems for finite $D$ do not apply.
+
+    \item \textbf{Cosmologies with unbounded entropy growth.}
+    In open FRW or certain eternal-inflation scenarios, coarse-grained entropy can increase without bound
+    (e.g.\ ever-growing apparent horizons or sustained particle production). If
+    \[
+       S_{\text{req}}(t)\nearrow\infty\quad\text{as}\quad t\to\infty,
+    \]
+    then any effective dimension $D_{\mathrm{eff}}(t)\sim \exp\{S_{\text{req}}(t)/k_B\}$ diverges in time, so there is
+    no time-independent finite-$D$ Hilbert space on which to invoke CCR.
+
+    \item \textbf{Non-compact holographic duals / continuous spectra.}
+    In AdS/CFT with non-compact spatial slices (or flat-space holography), the dual theory typically has
+    a continuous spectrum in the relevant sector. Continuous spectral measures preclude the kind of
+    quasi-periodic phase re-alignment guaranteed on a compact torus of phases; thus, no theorem-level
+    recurrence time follows from unitarity alone in these cases.
+\end{itemize}
+
+\noindent\emph{Consequence.} In all the above, the key CCR hypothesis (finite operational $D$) fails.
+Global quantum recurrences are not mathematically guaranteed; at best one may observe model-dependent
+quasi-recurrences or ergodic features, but no universal bound on return times.
+
+    
     \item Unitarity fails at cosmological scales (as in certain objective collapse or non-Hamiltonian models),
     \item The causal patch framework is not the correct coarse-graining of cosmology,
 \end{itemize}
-then the conclusion of inevitable recurrences does not follow.
+then the conclusion of inevitable recurrences in the finite-$D$ case does not follow.
 In such cases, even with a large but finite coarse-graining scale, the Bocchieri–Loinger theorem cannot be applied globally.
 Moreover, if (A1) fails while (A2–A4) still hold, one recovers the conventional picture of unbounded state space, in which the notion of recurrence becomes physically irrelevant for observers.
 
@@ -357,7 +428,7 @@ Moreover, if (A1) fails while (A2–A4) still hold, one recovers the conventiona
     \item \textbf{Non-unitary models:} Objective-collapse dynamics would invalidate recurrence.
     \item \textbf{Sector locking / non-ergodicity:} Horizons and conserved charges may confine dynamics; recurrence then holds within sectors.
     \item \textbf{Measure ambiguity:} Different measures yield different predictions; our prescription (Section~\ref{sec:measure}) satisfies basic sanity checks but remains an assumption. The no--BB constraint is stated once, canonically, in Section~\ref{sec:measure}.
-    \item \textbf{Timescales:} Global recurrences occur on timescales at least double--exponential in $S_{\max}$ (Remark~\ref{rem:times}); only coarse--grained returns may have operational relevance.
+    \item \textbf{Timescales:} Global recurrences occur on timescales at least double--exponential in $\Smax$ (Remark~\ref{rem:times}); only coarse--grained returns may have operational relevance.
     \item \textbf{Falsifiability:} The finite-dimensional Hilbert space conjecture for de Sitter patches (A1) could be falsified if any observation demonstrates unbounded entropy growth within a causal patch.
     \item \textbf{Compatibility:} CCR is consistent with Poincar\'e recurrence in finite systems and with holographic formulations; in de Sitter cosmology it aligns with proposals of finite $\dim\mathcal H\sim e^{S_{\rm dS}}$\,\cite{BanksFischler2001,BanksFischler2003} while differing from eternal-inflation pictures with infinite state spaces.
     \item \textbf{Swampland constraints:} If fully stable de Sitter vacua are absent or highly constrained\,\cite{Obied2018,Ooguri2019}, a non-negligible decay rate is expected, which supports the no--BB requirement and enhances predictivity under our measure prescription.
@@ -371,17 +442,17 @@ Moreover, if (A1) fails while (A2–A4) still hold, one recovers the conventiona
 \section{Connections to Broader Frameworks}
 
 \paragraph{String theory and holography.}
-In AdS/CFT a CFT on a compact spatial manifold has a discrete spectrum and finite thermal entropy for finite energy, so (coarse-grained) recurrences follow on exponentially long timescales; black-hole entropy scales with area, matching the holographic spirit of (A1). While a complete de Sitter holography is not established, proposals such as dS/CFT and static-patch finiteness motivate treating $S_{\max}\!\sim\! A/4\ell_P^2$ as an operational cap. Under such an assumption our CCR statement is a direct, causal-patch analogue: finite operational $D$ $+$ unitarity $\Rightarrow$ (coarse-grained) quantum recurrences.
+In AdS/CFT a CFT on a compact spatial manifold has a discrete spectrum and finite thermal entropy for finite energy, so (coarse-grained) recurrences follow on exponentially long timescales; black-hole entropy scales with area, matching the holographic spirit of (A1). While a complete de Sitter holography is not established, proposals such as dS/CFT and static-patch finiteness motivate treating $\Smax\!\sim\! A/4\ell_P^2$ as an operational cap. Under such an assumption our CCR statement is a direct, causal-patch analogue: finite operational $D$ $+$ unitarity $\Rightarrow$ (coarse-grained) quantum recurrences.
 
 \appendix
 \section*{Appendix A: Operational Dimension via Metric Entropy}
-Fix a trace-distance resolution $\delta\in(0,1)$. Let $\mathcal{N}(\delta)$ be the maximal size of a set of states inside the causal patch that are pairwise $\delta$-distinguishable in trace norm. Under the entropy cap $S_{\max}$ one obtains
+Fix a trace-distance resolution $\delta\in(0,1)$. Let $\mathcal{N}(\delta)$ be the maximal size of a set of states inside the causal patch that are pairwise $\delta$-distinguishable in trace norm. Under the entropy cap $\Smax$ one obtains
 \[
-\log \mathcal{N}(\delta)\ \lesssim\ \frac{S_{\max}}{k_B}\ +\ C\,\log\!\frac{1}{\delta},
+\log \mathcal{N}(\delta)\ \lesssim\ \frac{\Smax}{k_B}\ +\ C\,\log\!\frac{1}{\delta},
 \]
-for a constant $C$ independent of $S_{\max}$ (heuristically: Fannes--Audenaert continuity bounds relate distinguishability to entropic radius, so the area-law cap translates into a packing bound up to polylogarithmic factors in $1/\delta$). Hence the \emph{operational} effective dimension $D_{\rm eff}(\delta)$ is finite and obeys $\log D_{\rm eff}(\delta)\lesssim S_{\max}/k_B+O(\log(1/\delta))$.
+for a constant $C$ independent of $\Smax$ (heuristically: Fannes--Audenaert continuity bounds relate distinguishability to entropic radius, so the area-law cap translates into a packing bound up to polylogarithmic factors in $1/\delta$). Hence the \emph{operational} effective dimension $D_{\rm eff}(\delta)$ is finite and obeys $\log D_{\rm eff}(\delta)\lesssim \Smax/k_B+O(\log(1/\delta))$.
 
-\paragraph{Sketch.} Combine an $\varepsilon$-net/packing argument in trace norm with Fannes--Audenaert continuity of the von Neumann entropy and the holographic cap $S(\rho)\le S_{\max}$. A maximal $\delta$-separated set cannot exceed the covering number of the entropic ball, yielding the stated bound.
+\paragraph{Sketch.} Combine an $\varepsilon$-net/packing argument in trace norm with Fannes--Audenaert continuity of the von Neumann entropy and the holographic cap $S(\rho)\le \Smax$. A maximal $\delta$-separated set cannot exceed the covering number of the entropic ball, yielding the stated bound.
 
 \begin{table}[H]
   \centering
@@ -389,9 +460,9 @@ for a constant $C$ independent of $S_{\max}$ (heuristically: Fannes--Audenaert c
     \hline
     Resolution $\delta$ & Illustrative $\log D_{\rm eff}(\delta)$ bound \\
     \hline
-    $10^{-1}$ & $\lesssim S_{\max}/k_B + C\ln 10$ \\
-    $10^{-3}$ & $\lesssim S_{\max}/k_B + 3C\ln 10$ \\
-    $10^{-6}$ & $\lesssim S_{\max}/k_B + 6C\ln 10$ \\
+    $10^{-1}$ & $\lesssim \Smax/k_B + C\ln 10$ \\
+    $10^{-3}$ & $\lesssim \Smax/k_B + 3C\ln 10$ \\
+    $10^{-6}$ & $\lesssim \Smax/k_B + 6C\ln 10$ \\
     \hline
   \end{tabular}
   \caption{Operational effective dimension as a function of trace-distance resolution $\delta$ (schematic; $C=O(1)$).}
@@ -407,7 +478,7 @@ The key assumption (A1) in our Conditional Cosmological Recurrence (CCR) theorem
 \subsection{Holographic and Bekenstein Bounds}
 From the holographic principle and the Bekenstein--Hawking entropy formula for a causal horizon of area \(A\), we have:
 \begin{equation}
-S_{\max} = \frac{k_B A}{4 \ell_P^2},
+\Smax = \frac{k_B A}{4 \ell_P^2},
 \end{equation}
 where \(\ell_P\) is the Planck length.
 
@@ -424,13 +495,13 @@ to collapse into a black hole, whose entropy depends only on its horizon area.
 \subsection{Coverage Ratio and Saturation}
 Let us define a coverage ratio \(\Phi(a)\) at scale factor \(a\) as:
 \begin{equation}
-\Phi(a) \equiv \frac{S_{\mathrm{req}}(a)}{S_{\max}(a)} \le 1,
+\Phi(a) \equiv \frac{S_{\text{req}}(a)}{\Smax(a)} \le 1,
 \end{equation}
-where \(S_{\mathrm{req}}(a)\) is the coarse-grained entropy required to encode the degrees of freedom present in the causal patch at time \(a\).
+where \(S_{\text{req}}(a)\) is the coarse-grained entropy required to encode the degrees of freedom present in the causal patch at time \(a\).
 
 If \(\Phi(a) \to 1\), the available Hilbert space dimension
 \begin{equation}
-D_{\max} \approx \exp\left( \frac{S_{\max}}{k_B} \right)
+D_{\max} \approx \exp\left( \frac{\Smax}{k_B} \right)
 \end{equation}
 is saturated, and no new orthogonal quantum states can be accommodated.
 
@@ -451,13 +522,15 @@ If the causal patch Hilbert space saturates at a finite \(D_{\max}\), assumption
 This embedding provides a concrete physical picture linking macroscopic spacetime dynamics and microscopic Hilbert space finiteness, and connects the recurrence result to measurable cosmological parameters via the holographic bound.
 
 \section*{Appendix B: Microcanonical Counting with a Gravitational Cap}
+\label{app:microcanonical}
+
 Consider a (free) relativistic field in a cubic box $L^3$ with standard boundary conditions. IR discretization gives momenta $\mathbf k=\frac{\pi}{L}(n_x,n_y,n_z)$ and frequencies $\omega_{\mathbf k}\ge c|\mathbf k|$. Impose the microcanonical constraint $\sum_{\mathbf k} n_{\mathbf k}\hbar\omega_{\mathbf k}\le E_{\rm BH}(R)$ with $R\sim L$.
 Let $M(\Lambda)$ be the number of modes with $\hbar\omega_{\mathbf k}\le \Lambda$; then $M(\Lambda)\sim \frac{4\pi}{3}\big(\frac{L\Lambda}{\pi\hbar c}\big)^3$. Since each quantum costs at least $\hbar\omega_{\min}\sim \hbar\pi c/L$, the total occupation obeys $N_{\text{quanta}}\le n_{\max}\sim E_{\rm BH}/(\hbar\omega_{\min})$.
 For bosons, the number of Fock states with at most $n_{\max}$ quanta distributed over $M$ modes is bounded by the stars-and-bars count.
 \[
 \#\mathcal{F}(E_{\rm BH})\ \le\ \binom{n_{\max}+M}{M}\ <\ \infty,
 \]
-and for fermions by $\sum_{j=0}^{\min(M,n_{\max})}\binom{M}{j}$. In either case, the accessible Fock subspace below the gravitational cap is finite-dimensional. Operationally, this is dominated by the entropy bound, $\log D\le S_{\max}/k_B$.
+and for fermions by $\sum_{j=0}^{\min(M,n_{\max})}\binom{M}{j}$. In either case, the accessible Fock subspace below the gravitational cap is finite-dimensional. Operationally, this is dominated by the entropy bound, $\log D\le \Smax/k_B$.
 
 \paragraph{String landscape and eternal inflation.}
 In landscape scenarios, metastable de Sitter vacua are populated and decay via Coleman–De~Luccia tunneling. The no--Boltzmann--Brain constraint of Section~\ref{sec:measure} becomes a quantitative condition on late-time de Sitter lifetimes, and it meshes naturally with causal-diamond measures used to regulate infinities. Bubble-collision imprints and topological CMB searches are indirect observational handles consistent with this picture.
@@ -495,7 +568,7 @@ For bosons with at most $N_{\max}$ quanta over $M(\Lambda)$ modes, the number of
 \]
 where $H(p)=-p\ln p-(1-p)\ln(1-p)$ and we use Stirling. In all cases, $\#\mathcal{F}(E_{\mathrm{BH}})<\infty$.
 For fermions, $\#\le \sum_{j=0}^{\min(M,N_{\max})}\binom{M}{j}<\infty$ immediately.
-Operationally, this is dominated by the entropy cap $\log D\le S_{\max}/k_B$, hence $\dim\mathcal{H}_{\mathrm{acc}}<\infty$.
+Operationally, this is dominated by the entropy cap $\log D\le \Smax/k_B$, hence $\dim\mathcal{H}_{\mathrm{acc}}<\infty$.
 \hfill$\square$
 % ============================
 
@@ -536,9 +609,9 @@ Consequently, the dimension of the Hilbert space is finite:
 This is the key physical premise underlying the Conditional Cosmological Recurrence (CCR) theorem developed in this work.
 
 \section{Quantitative Recurrence Estimates}
-For an asymptotic de Sitter patch with $S_{\max}\sim 10^{122} k_B$, a conservative global recurrence estimate using the double-exponential bound gives
+For an asymptotic de Sitter patch with $\Smax\sim 10^{122} k_B$, a conservative global recurrence estimate using the double-exponential bound gives
 \[
- T^{\rm (global)}_{\rm rec} \gtrsim \exp\{\alpha\,\exp(10^{122})\},
+ T^{\rm (global)}_{\text{rec}} \gtrsim \exp\{\alpha\,\exp(10^{122})\},
 \]
 utterly beyond operational relevance. By contrast, for a coarse--grained subsystem with $S_A\sim 10^{40}$ one expects
 \[
@@ -551,32 +624,20 @@ the number of atoms in the observable universe. Such timescales are physically m
 
 
 \section{Conclusions and Future Directions}
-We have presented the Conditional Cosmological Recurrence (CCR) theorem as a rigorous consequence of 
-a finite operational Hilbert-space dimension combined with unitarity. 
-By connecting microscopic field-theoretic discretization and gravitational entropy bounds, 
-we motivate the assumption of finite $D$ for a causal patch and show that recurrence --- global or coarse-grained --- 
-is then inevitable, though only coarse-grained recurrences are operationally relevant.
 
-\vspace{0.5cm}
+We have presented the Conditional Cosmological Recurrence (CCR) theorem as a rigorous
+consequence of a finite operational Hilbert-space dimension combined with unitarity. By
+connecting microscopic field-theoretic discretization and gravitational entropy bounds, we
+motivate the assumption of finite $D$ for a causal patch and show that recurrence --- global
+or coarse-grained --- is then inevitable in the finite-$D$ setting, though only coarse-grained
+recurrences are operationally relevant.
 
-\begin{table}[H]
-\centering
-\caption{Order-of-magnitude recurrence timescales for different scenarios. 
-$S$ denotes the relevant entropy in units of $k_B$.}
-\vspace{0.2cm}
-\begin{tabular}{lccc}
-\hline
-\textbf{Scenario} & \textbf{$S/k_B$} & \textbf{$T_{\mathrm{rec}}$} & \textbf{Observable?} \\
-\hline
-Global (de Sitter) & $10^{122}$ & $\exp\!\big(\exp(10^{122})\big)$ yrs & No \\
-Coarse-grained subsystem & $10^{3}$ & $\exp(10^{3})$ yrs$^{\ast}$ & No \\
-Toy model ($D=16$) & $\ln 16$ & $\sim 10^{2}$ units & Yes (verified) \\
-\hline
-\end{tabular}
-\label{tab:timescales}
-\end{table}
-\vspace{-0.3cm}
-{\footnotesize $^{\ast}$Still vastly exceeds the age of the universe.}
+The key message is that the structure of the state space, rather than the detailed dynamics,
+dictates the inevitability of recurrence once finiteness is assumed. This perspective offers a
+sharp contrast with the standard infinite-dimensional framework and underscores the importance
+of exploring models with finite state spaces. An outstanding challenge is to determine whether
+coarse-grained or indirect signatures of finite-$D$ physics could be probed in cosmology, or
+whether the CCR theorem remains a purely conceptual constraint.
 
 \vspace{0.3cm}
 
@@ -590,18 +651,11 @@ $\exp(10^{3}) \approx 10^{434}$ years exceeds the current age of the universe
 ($\sim 10^{10}$ years) by over $400$ orders of magnitude.
 
 \paragraph{Future directions.}
-Testing CCR in controlled settings: (i) AdS/CFT toy models on compact spatial manifolds (finite thermal state-count at fixed energy); (ii) lattice simulations and tensor networks with explicit finite-$D$ truncations to track coarse--grained returns; (iii) random Hamiltonian ensembles with causal-patch-inspired finite Hilbert spaces to benchmark scaling laws for $T_{\rm rec}^{(A)}$ and $t_{\rm scr}$.
+Testing CCR in controlled settings: (i) AdS/CFT toy models on compact spatial manifolds (finite thermal state-count at fixed energy); (ii) lattice simulations and tensor networks with explicit finite-$D$ truncations to track coarse-grained returns; (iii) random Hamiltonian ensembles with causal-patch-inspired finite Hilbert spaces to benchmark scaling laws for $\Trec^{(A)}$ and $t_{\rm scr}$.
 
+We now briefly situate our results in the broader context of prior work.
 
-\begin{figure}[H]
-    \centering
-\includegraphics[width=0.9\linewidth]{CCR_flowchart}
-    \caption{Flow chart illustrating the logical structure of the CCR Theorem, from holographic bounds to conditional recurrences and their cosmological implications.}
-    \label{fig:CCR_flowchart}
-\end{figure}
-
-
-\section*{Related Works and Contextual Relevance}
+\section{Related Works and Novelty}
 We briefly review selected works that directly motivate or constrain our Conditional Cosmological Recurrence (CCR) framework:
 
 \begin{itemize}[leftmargin=1.2em]
@@ -621,8 +675,6 @@ We briefly review selected works that directly motivate or constrain our Conditi
     Discuss Poincaré recurrence in cosmology, emphasizing its inevitability in finite systems and the associated measure problems — problems CCR reframes as conditional statements dependent on gravitational entropy bounds.
 \end{itemize}
 
-
-% ============================
 \subsection{Novelty Relative to Prior Work}
 \label{subsec:novelty}
 Our contribution is \emph{not} a new recurrence law. The novelty is three–fold:
@@ -634,20 +686,47 @@ This makes recurrence a \emph{derived} consequence of finiteness rather than an 
 
 \paragraph{(ii) Conditional framing with falsifiability.}
 Unlike typical discussions of cosmological recurrence \cite{DysonKlebanSusskind2002}, we make recurrence \emph{conditional} on (A1): if future QG shows $D=\infty$ for causal patches, our CCR framework is falsified \emph{as stated}. 
-This gives a clean physics “if–then”: the “if” (finite information bound) is empirical/theoretical physics, the “then” (almost periodicity/recurrence) is rigorous mathematics.
+This gives a clean physics "if–then": the "if" (finite information bound) is empirical/theoretical physics, the "then" (almost periodicity/recurrence) is rigorous mathematics.
 
 \paragraph{(iii) Unified local measure with a single no–BB constraint.}
 To address predictivity, we advocate a minimalistic causal–diamond measure with xerographic typicality plus one canonical no–Boltzmann–Brain constraint, avoiding volume–weighting pathologies and BB domination \cite{DysonKlebanSusskind2002,Page2007}.
 This is a compact prescription rather than an ad-hoc casework.
 
 \noindent In short: (finite operational $D$) $+$ (unitary dynamics) $\Rightarrow$ CCR, with a concrete micro–to–macro bridge and a lean measure choice that avoids known pitfalls.
-% ============================
-
 
 \bibliographystyle{unsrt}
 \bibliography{references}
 
 \nocite{*}
+
+\appendix
+\section{Supplementary Figures and Tables}
+
+\begin{figure}[H]
+    \centering
+\includegraphics[width=0.9\linewidth]{CCR_flowchart}
+    \caption{Flow chart illustrating the logical structure of the CCR Theorem, from holographic bounds to conditional recurrences and their cosmological implications.}
+    \label{fig:CCR_flowchart}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Order-of-magnitude recurrence timescales for different scenarios. 
+$S$ denotes the relevant entropy in units of $k_B$.}
+\vspace{0.2cm}
+\begin{tabular}{lccc}
+\hline
+\textbf{Scenario} & \textbf{$S/k_B$} & \textbf{$\Trec$} & \textbf{Observable?} \\
+\hline
+Global (de Sitter) & $10^{122}$ & $\exp\!\big(\exp(10^{122})\big)$ yrs & No \\
+Coarse-grained subsystem & $10^{3}$ & $\exp(10^{3})$ yrs$^{\ast}$ & No \\
+Toy model ($D=16$) & $\ln 16$ & $\sim 10^{2}$ units & Yes (verified) \\
+\hline
+\end{tabular}
+\label{tab:timescales}
+\end{table}
+\vspace{-0.3cm}
+{\footnotesize $^{\ast}$Still vastly exceeds the age of the universe.}
 
 \section*{Appendix E: Methods for Toy Models}
 \label{app:methods-toys}
@@ -670,6 +749,5 @@ The scrambling time $\tscr$ is taken as the earliest $t$ when $\mathcal{R}_A(t)$
 
 \paragraph{Numerics.}
 All times are obtained from discrete time sampling with $\Delta t = 0.1$ up to $t_{\max} = 100$, using ensembles of $10^3$ realizations to estimate median values.
-
 
 \end{document}
