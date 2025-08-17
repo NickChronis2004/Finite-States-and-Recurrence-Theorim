@@ -26,3 +26,4 @@ Key physical intuition:
 - `fig_*` — figures used in the paper.
 
 <img width="2000" height="1042" alt="image" src="https://github.com/user-attachments/assets/095c09d8-7e7b-477a-acc7-c74580b5ea2d" />
+You can see the publishment here: https://zenodo.org/records/16890434
