@@ -17,8 +17,8 @@
 \usepackage{mathtools}
 \usepackage{microtype}
 \usepackage{float}
-
-% Nice tables (already loaded above)
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
 
 % Consistent notation macros (used in the toy table)
 \newcommand{\Smax}{S_{\max}}
@@ -129,10 +129,14 @@ $\log D \le \Smax/k_B \lesssim A/(4\ell_P^2)$, so the accessible Hilbert space d
 \noindent(See Appendix~B for an explicit microcanonical counting illustration under a gravitational cap.)
 
 \begin{proof}[Proof sketch]
-Finite volume $\Rightarrow$ discrete $\mathbf{k}$ (Lemma~\ref{lem:IR}). The energy cap forbids arbitrarily many high-frequency quanta (Lemma~\ref{lem:UV}). 
-Since $\omega_{\mathbf{k}}\ge c|\mathbf{k}|$ and the number of modes below any cutoff $\Lambda$ is finite, the integer solutions 
-$\{n_{\mathbf{k}}\}$ of $\sum n_{\mathbf{k}}\hbar\omega_{\mathbf{k}}\le E_{\rm BH}$ are finite. 
-Operational distinguishability is limited by the entropy bound, giving $\log D \le \Smax/k_B$.
+Finite volume $\Rightarrow$ discrete $k$ (Lemma 1). The energy cap forbids arbitrarily 
+many high-frequency quanta (Lemma 2). Since $\omega_k \geq c|k|$ and the number of modes 
+below any cutoff $\Lambda$ is finite, the integer solutions $\{n_k\}$ of 
+$\sum n_k \hbar \omega_k \leq E_{\mathrm{BH}}$ are finite. While derived here for free 
+fields, the finiteness conclusion extends to weakly interacting theories: interactions 
+modify the state space structure but cannot generate infinite independent states below 
+the gravitational bound. Operational distinguishability is limited by the entropy bound, 
+giving $\log D \leq S_{\max}/k_B$.
 \end{proof}
 
 \textbf{Physical intuition:} A finite spatial region implies discrete field modes (analogous to a particle in a box). 
@@ -290,6 +294,18 @@ Toy model values from 1000 realizations; see Appendix~\ref{app:methods-toys}.
     \label{tab:toy_summary}
 \end{table}
 
+\paragraph{Interpretation.} 
+Although these toy models are far simpler than the cosmological setting, 
+they serve to illustrate the same underlying mechanism: once the number 
+of microstates is finite, recurrences are inevitable on sufficiently long 
+timescales. The toy results thus provide a concrete, calculable 
+demonstration of the logic that, in the cosmological case, is applied at a 
+vastly larger scale. In particular, the way finite state counts in the toy 
+systems translate into recurrence times provides a useful analogy to the 
+cosmological argument: finite Hilbert space dimensionality plus ergodic 
+dynamics generically leads to returns.
+
+
 Full details of the toy model construction, parameter choices, and numerical procedures are given in Appendix~\ref{app:methods-toys}.
 
 
@@ -366,7 +382,6 @@ then $\Gamma_{\mathrm{BB},i}$ are double-exponentially suppressed, and even minu
 \end{figure}
 
 
-
 \begin{figure}[h]
   \centering
 \includegraphics[width=0.48\linewidth]{figs/fig_fidelity.png}
@@ -376,11 +391,22 @@ then $\Gamma_{\mathrm{BB},i}$ are double-exponentially suppressed, and even minu
 
 \paragraph{Observational handles (final remark).}
 It should be emphasized that no direct observational constraints currently exist on the
-Hilbert-space dimension $D$ or on $\Smax$ of a causal patch. Existing limits are only
+Hilbert-space dimension $D$ or on $S_{\max}$ of a causal patch. Existing limits are only
 \emph{indirect}: for example, from non-observation of non-trivial cosmic topology in the CMB,
 or from lower bounds on vacuum decay rates. Such considerations motivate the conditional
 framing adopted here, but they do not provide a direct empirical handle on the finiteness
-assumption.
+assumption. 
+
+Looking ahead, one could imagine that future probes of the fundamental 
+information content of spacetime might offer indirect tests. For example, 
+precise measurements of cosmic microwave background (CMB) correlations 
+could in principle reveal signs of a finite mode spectrum or unexpected 
+recurrence-like patterns. Similarly, advances in quantum gravity or 
+holographic approaches might eventually connect the dimensionality $D$ of 
+the cosmological Hilbert space to observable signatures, such as bounds 
+on entropy production in inflationary reheating. While such possibilities 
+remain speculative, they suggest that the framework may ultimately be 
+constrained—or even falsified—by empirical data.
 
 
 \section{Rigour Addendum: What is Theorem-level vs Assumptions}\label{sec:rigour-addendum}
@@ -773,6 +799,41 @@ The local recurrence time $\TrecA(\varepsilon_A)$ is the first $t>0$ where $\mat
 The scrambling time $\tscr$ is taken as the earliest $t$ when $\mathcal{R}_A(t)$ reaches $90\%$ of its late-time plateau value.
 
 \paragraph{Numerics.}
-All times are obtained from discrete time sampling with $\Delta t = 0.1$ up to $t_{\max} = 100$, using ensembles of $10^3$ realizations to estimate median values.
+All times are obtained from discrete time sampling with $\Delta t = 0.1$ up to $t_{\max} = 100$, 
+using ensembles of $10^3$ realizations to estimate median values.
+
+\clearpage
+\section*{Appendix F: Scaling of Recurrence Times}
+
+A standard estimate for recurrence times follows from the finiteness of the Hilbert space 
+dimension $D$. For a generic Hamiltonian with $D$ nondegenerate energy levels, the 
+quantum recurrence time scales as 
+\begin{equation}
+   T_{\mathrm{rec}} \sim \exp(D).
+\end{equation}
+Intuitively, this reflects the need to resolve phase differences among $D$ distinct 
+frequencies. 
+
+Meanwhile, holographic entropy bounds imply 
+\begin{equation}
+   D \sim \exp\!\left(\frac{S}{k_B}\right),
+\end{equation}
+where $S \lesssim S_{\max} \sim A/(4 \ell_P^2)$ is the Bekenstein--Hawking entropy 
+associated with the causal patch. 
+
+Combining these relations gives
+\begin{equation}
+   T_{\mathrm{rec}} \sim \exp\!\left[\,\exp\!\left(\tfrac{S}{k_B}\right)\right],
+\end{equation}
+i.e.\ a double-exponential scaling in the entropy. This simple derivation justifies the 
+order-of-magnitude remark given in the main text (Remark~1).
+
+A more refined treatment replaces the heuristic estimate $T_{\mathrm{rec}} \sim \exp(D)$ 
+with bounds from Diophantine approximation on $D$-dimensional tori. 
+Specifically, the recurrence time is controlled by the degree to which the energy 
+gaps $\{E_j - E_k\}$ avoid low-order rational relations (Kronecker-type theorems). 
+Metric results in simultaneous Diophantine approximation then imply that, 
+for generic spectra, $T_{\mathrm{rec}}$ grows at least exponentially with $D$, 
+leading again to the double-exponential scaling in $S/k_B$ quoted above.
 
 \end{document}
