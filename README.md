@@ -27,28 +27,3 @@ Key physical intuition:
 
 <img width="2000" height="1042" alt="image" src="https://github.com/user-attachments/assets/095c09d8-7e7b-477a-acc7-c74580b5ea2d" />
 You can see the publishment here: https://zenodo.org/records/16890434
-
-
-SUBATOMIC/MICRO LEVEL
-         ↓
-    Quantum Fields in Finite Region
-         ↓
-    IR Discretization (Lemma 1)
-    • Finite spatial volume R³
-    • Discrete momentum modes k = π/R(nx,ny,nz)
-    • "Particle in a box" analogy
-         ↓
-    UV/Gravitational Cutoff (Lemma 2)
-    • Energy bound: E ≤ EBH(R) = c⁴R/2G
-    • Too much energy → gravitational collapse
-    • Bekenstein-Hawking entropy: Smax ≤ kBA/4ℓP²
-         ↓
-    Finite Fock Space (Proposition 1)
-    • Microcanonical constraint: Σnkℏωk ≤ EBH
-    • Finite number of quantum states
-    • Operational dimension: log D ≤ Smax/kB
-         ↓
-    FINITE HILBERT SPACE DIMENSION
-    • dim H = D < ∞ for causal patch
-         ↓
-    ASSUMPTION A1: Finite Information Bound
