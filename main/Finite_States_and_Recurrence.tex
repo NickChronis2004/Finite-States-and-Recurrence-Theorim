@@ -82,12 +82,39 @@ budget for causal patches.
 
 \section*{Originality and Scope}
 
-Rather than proposing a new recurrence law, the novelty lies in:
-(i) a micro–to–macro counting argument that motivates $D < \infty$ per causal patch under
-gravitational/entropic constraints;
-(ii) casting recurrence as a conditional consequence (CCR) of that finiteness;
-(iii) a measure prescription (causal diamond + no–BB) designed to avoid known pathologies.
-Here, de Sitter holography is treated as a well–motivated assumption rather than a proven duality.
+The core idea that finite Hilbert spaces imply quantum recurrences is not new: it goes 
+back to Bocchieri--Loinger (1957) and has been discussed in cosmological contexts 
+(e.g.\ Dyson--Kleban--Susskind 2002). The present work does \emph{not} propose a new 
+recurrence law. Instead, its novelty lies in three complementary aspects:
+
+\begin{enumerate}
+    \item \textbf{Explicit constructive micro--to--macro derivation.} 
+    We provide a concrete microcanonical counting argument under a gravitational 
+    energy cap (Proposition~1, Appendix~B), showing explicitly how infrared 
+    discretization and holographic entropy bounds combine to enforce a finite 
+    operational Hilbert-space dimension. This makes the finiteness assumption tangible 
+    rather than heuristic.
+
+    \item \textbf{Conditional and falsifiable framing.} 
+    The ``Conditional Cosmological Recurrence'' (CCR) theorem is stated in a strictly 
+    conditional form: if causal patches admit a finite Hilbert space dimension 
+    (assumption A1), then recurrence follows rigorously from unitarity. Conversely, if 
+    future quantum gravity demonstrates that $D=\infty$, the entire framework is 
+    falsified. This clean \emph{if--then} structure is rarely made explicit in prior 
+    literature and emphasizes testability.
+
+    \item \textbf{Minimalistic measure prescription.} 
+    To address predictivity in eternally inflating settings, we propose a compact 
+    causal-diamond measure combined with xerographic typicality and a single 
+    no--Boltzmann--Brain constraint. This avoids the volume-weighting pathologies 
+    highlighted in earlier works while keeping the prescription lean and falsifiable.
+\end{enumerate}
+
+In short, the contribution of this paper is not the discovery of recurrence \emph{per se}, 
+but the \emph{systematic construction of a finite-state framework} (micro--to--macro 
+counting), its \emph{conditional and testable formulation} (CCR theorem), and a 
+\emph{clean measure proposal} that together yield a more rigorous and falsifiable picture 
+of recurrence in cosmological settings.
 
 \begin{center}
 \fbox{\parbox{0.92\textwidth}{
@@ -155,11 +182,11 @@ Consider a causal patch (the region causally connected to an observer) with hori
 
 \section{CCR Theorem and Coarse-Grained Recurrence}
 \begin{theorem}[Conditional cosmological recurrence (CCR)]\label{thm:CCR}
-Under (A1)--(A2), for any initial pure state $|\psi(0)\rangle$ and any $\varepsilon>0$ there exists $T$ such that
+Under (A1)--(A2), for any initial pure state $|\psi(0)\rangle$ and any $\varepsilon>0$, there exists $T$ such that
 \begin{equation}
  F(T):=|\langle\psi(0)|\psi(T)\rangle|^2 > 1-\varepsilon.
 \end{equation}
-Moreover, recurrence times obey the lower-bound behavior in Remark~\ref{rem:times}; any single-exponential-in-$\Smax$ shorthand is only schematic.
+Moreover, recurrence times obey the lower-bound behavior in Remark~\ref{rem:times};
 \end{theorem}
 \begin{proof}[Proof sketch]
 Finite $D$ implies a discrete spectrum and almost-periodic evolution (Bocchieri--Loinger\,\cite{BocchieriLoinger1957}). 
@@ -184,19 +211,30 @@ Since $D \lesssim \exp(\Smax/k_B)$\footnote{This is the standard holographic ent
 \Trec \;\gtrsim\; \exp\!\Big\{\alpha\,\exp(\Smax/k_B)\Big\},
 \]
 i.e. \emph{double–exponential} in the entropy (up to polynomial prefactors in microscopic scales).
-Any single–exponential–in–$\Smax$ expression (e.g. $\Trec\sim t_{\rm micro}\,e^{\Smax/k_B}$) should therefore be read as a schematic, order–of–magnitude placeholder rather than a sharp scaling law. For illustration, even a toy system with dimension $D=10^3$ already yields a 
+For illustration, even a toy system with dimension $D=10^3$ already yields a 
 recurrence time of order $T_{\text{rec}} \sim e^{10^3} \approx 10^{434}$ steps, 
 while for cosmological entropies ($D \sim 10^{120}$) the scale becomes 
 incomprehensibly large ($T_{\text{rec}} \sim e^{10^{120}}$).
 
 
 \begin{remark}[Global vs.\ local/coarse-grained returns]\label{rem:times}
-Global microstate recurrences scale at least double–exponentially in $\Smax$, 
-while coarse–grained recurrences of a finite subsystem $A$ scale roughly as 
-$\exp\{c\,S_A\}$ for fixed tolerance $\varepsilon$. 
-Scrambling times in fast–scramblers are $\tscr\sim (\beta/2\pi)\ln S$.
-Only the latter two have any realistic operational meaning; see Table~\ref{tab:times}.
+For a finite Hilbert space dimension $D$, generic recurrence times grow at least 
+exponentially in $D$, implying a \emph{double--exponential} scaling in the maximal entropy,
+\[
+T^{\mathrm{(global)}}_{\mathrm{rec}} \;\gtrsim\; \exp\!\left\{ \alpha\,\exp\!\left(\tfrac{S_{\max}}{k_B}\right)\right\}.
+\]
+Such global microstate recurrences occur on timescales far beyond any operational meaning.
+
+By contrast, coarse--grained or subsystem recurrences scale only \emph{single--exponentially}
+with the entropy of the subsystem,
+\[
+T^{(A)}_{\mathrm{rec}}(\varepsilon) \;\sim\; \exp\!\{c\,S_A\},
+\]
+which, while still extremely large, are vastly more frequent than exact microstate returns. 
+Scrambling times in fast scramblers scale as $\tscr \sim (\beta/2\pi)\ln S$. 
+Only the latter two regimes carry potential operational relevance.
 \end{remark}
+
 
 % ============================
 \begin{table}[t]
@@ -310,6 +348,65 @@ Full details of the toy model construction, parameter choices, and numerical pro
 
 
 
+\section{Cosmological Consequences}
+
+The CCR framework, though strictly conditional, nevertheless has direct implications 
+for key problems in cosmology, since even though the rigorous recurrence times of a 
+full causal patch are double–exponential and thus operationally irrelevant, the 
+conditional structure itself carries genuine cosmological significance:
+
+\begin{itemize}
+    \item \textbf{Predictivity in eternal inflation.} 
+    A finite Hilbert space dimension implies a finite outcome space, removing the 
+    measure ambiguities of volume--weighted approaches. Probabilities are then defined 
+    over a compact state space, yielding a falsifiable statistical framework.
+
+    \item \textbf{Boltzmann--brain constraint.} 
+    In conventional measures, observers dominated by Boltzmann brains undermine 
+    predictivity. In the CCR framework, imposing the single condition 
+    $\Gamma_{\text{decay}} \gg \Gamma_{\text{BB}}$ ensures that ordinary observers 
+    dominate, thereby avoiding the paradox.
+
+    \item \textbf{Observational falsifiability.} 
+    If future developments in quantum gravity or cosmology demonstrate unbounded 
+    entropy growth in causal patches, the CCR framework is falsified in its entirety. 
+    Conversely, any evidence for metastable vacuum decay would be consistent with the 
+    no--BB prescription.
+
+    \item \textbf{Conceptual bridge.} 
+    The CCR program provides a bridge between holographic entropy bounds and 
+    macroscopic cosmology. In this sense, ``recurrence'' is not a purely mathematical 
+    curiosity but a structural constraint with direct implications for cosmological 
+    predictivity.
+\end{itemize}
+
+In short, the CCR framework translates a mathematical recurrence theorem into a 
+conditional, testable perspective on cosmology: finite information bounds imply 
+finite Hilbert spaces; finite Hilbert spaces imply recurrence; and the consistency 
+of predictions requires suppressing Boltzmann brains. This gives recurrence a 
+concrete role in addressing some of the central puzzles of cosmology. While the 
+above discussion applies to a single causal patch, the same logic can be extended 
+to multiverse settings, as discussed in the following subsection.
+
+
+\subsection*{Beyond a Single Patch: Multiverse Considerations}
+
+While the present discussion focused on a single causal patch, the logic of CCR 
+extends naturally to multiverse scenarios. In eternal inflation, the global spacetime 
+can be viewed as an ensemble of quasi--independent causal patches, each bounded by 
+its own horizon and subject to holographic entropy limits. If each such patch admits 
+a finite Hilbert space, then the CCR theorem applies patch by patch. In this sense, 
+recurrence is not a peculiarity of ``our universe'' but a structural feature of any 
+holographically bounded region.
+
+This suggests a modular picture of the multiverse: a collection of finite--state 
+systems, each evolving unitarily with conditional recurrences. Whether correlations 
+between patches can be defined consistently remains an open problem, but the CCR 
+framework provides a baseline for treating each region as a finite information--bearing 
+system.
+
+
+
 \section{Measure and Predictivity}\label{sec:measure}
 \paragraph{Why ambiguity arises.} In eternally inflating or infinitely extended scenarios, \emph{everything} that can happen tends to happen infinitely many times. Raw frequencies become $\infty/\infty$, so probabilities are undefined without a regularization/cutoff (a \emph{measure}). Different cutoffs induce different weights---hence the measure problem.
 
@@ -319,6 +416,14 @@ Full details of the toy model construction, parameter choices, and numerical pro
  S_{\rm BB}\sim \frac{E_{\rm BB}}{k_B T_{\rm dS}},\quad T_{\rm dS}=\frac{H}{2\pi},
 \end{equation}
 equivalently $\tau_{\rm decay}\ll \tau_{\rm BB}$. This avoids volume biases and Boltzmann-brain domination in eternal-de Sitter scenarios and restores finite, stable probabilities\,\cite{DysonKlebanSusskind2002,Page2007}.
+
+\paragraph{Xerographic typicality (definition).}
+Within a given causal diamond, let $\mathcal{O}_{\mathrm{ord}}$ denote the set of ordinary
+observation–instances (excludes BBs). Xerographic typicality assumes that our data
+$(\mathcal{D})$ are sampled uniformly at random from $\mathcal{O}_{\mathrm{ord}}$; i.e. the prior
+weight of an observer is proportional to the count of ordinary observation–instances
+realized in the diamond, with BBs assigned zero weight by the $\Gamma_{\rm decay}\gg\Gamma_{\rm BB}$ constraint.
+
 
 \begin{figure}[t]
   \centering
@@ -360,137 +465,258 @@ then $\Gamma_{\mathrm{BB},i}$ are double-exponentially suppressed, and even minu
 \end{figure}
 
 \section{Information/Computation Bounds (CS Viewpoint)}
-\paragraph{Bit budget.} The maximum reliably distinguishable information inside a causal patch obeys $\log_2 D \lesssim \Smax/(\ln 2) \le A/(4\ell_P^2\ln 2)$ bits.
-\paragraph{Operation rate.} Given mean energy $E$, Margolus--Levitin/Lloyd imply $\dot N_{\rm ops} \le 2E/(\pi\hbar)$; Landauer gives $E_{\rm erase}\ge k_B T \ln 2$. Together with collapse thresholds, these define a feasible compute envelope per patch\,\cite{MargolusLevitin1998,Lloyd2000}.
 
-\section{Observational Handles (Indirect)}
+A finite Hilbert-space dimension also places limits on the information-theoretic and
+computational capacity of a causal patch. This provides a complementary ``computer science''
+viewpoint on the consequences of bounded $D$.
+
+\paragraph{Bit budget.}
+The maximum reliably distinguishable information inside a causal patch is set by the
+Hilbert-space dimension,
+\[
+\log_2 D \;\lesssim\; \frac{S_{\max}}{\ln 2} \;\leq\; \frac{\Lambda}{4 \, \ell_P^2 \ln 2} \;\; \text{bits},
+\]
+where $S_{\max}$ is the maximal entropy and $\Lambda$ the de Sitter horizon area.
+This inequality expresses the intuitive statement that a causal patch behaves as a
+finite-capacity information channel.
+
+\paragraph{Operation rate.}
+Given mean energy $E$, the Margolus--Levitin bound and Landauer’s principle imply that
+logical operations within the patch are constrained by
+\[
+N_{\rm ops} \;\lesssim\; \frac{2E}{\pi \hbar}, 
+\qquad 
+E_{\rm erase} \;\geq\; k_B T \ln 2 .
+\]
+Together with collapse thresholds, these results define a feasible computation envelope
+per patch, consistent with Lloyd’s ``ultimate physical limits to computation''
+\cite{MargolusLevitin1998,Lloyd2000,Landauer1961}.
+
+\paragraph{Implication.}
+These bounds highlight that the CCR framework is not only about abstract recurrence
+times: finite Hilbert space dimension directly limits both the \emph{storage capacity}
+and the \emph{computational rate} of any causal patch. In this sense, recurrence,
+predictivity, and information processing are facets of the same underlying finiteness
+constraint.
+
+
+\section{Indirect Observational Probes}
 \begin{itemize}[leftmargin=1.2em]
   \item \textbf{Compact spatial topology:} Cosmic Microwave Background (CMB) ``matched circles'' and low-$\ell$ anomalies; current Planck searches find no matched circles above angular radii $\gtrsim 10^{\circ}$ and set strong lower bounds on the size of a fundamental domain\,\cite{CornishSpergelStarkman1998,Planck2016Topology}.
-  \item \textbf{Bubble collisions (eternal inflation):} disk-like imprints in CMB temperature/polarization.
+  \item \textbf{Bubble collisions (eternal inflation):} disk-like imprints in CMB temperature/polarization; non-detection constrains the landscape of eternal-inflation scenarios consistent with CCR.
   \item \textbf{Cyclic/CCC-like memory:} specific non-Gaussian residuals; localized hot/cold spots. Existing Planck analyses report no significant evidence for the concentric-ring patterns proposed in CCC and place upper bounds on such features\,\cite{WehusEriksen2011,Planck2015Isotropy}. Prospects improve with CMB-S4\,\cite{CMBS4SB}.
-  \item \textbf{Dark-energy metastability:} either small deviations $w(z)\neq -1$ or lower bounds on $\Gamma_{\rm decay}$ consistent with no--BB.
-  \item \textbf{Primordial GWs:} spectra incompatible with simple slow-roll but compatible with cyclic/pre-inflationary scenarios.
+  \item \textbf{Dark-energy metastability:} either small deviations $w(z)\neq -1$ or lower bounds on $\Gamma_{\rm decay}$ consistent with the no--BB prescription, providing a key falsifiability condition.
+  \item \textbf{Primordial GWs:} spectra incompatible with simple slow-roll but compatible with cyclic/pre-inflationary scenarios, potentially hinting at finite-dimensional pre-inflationary dynamics.
 \end{itemize}
 
+\paragraph{Final remark.}
+No direct observational constraints currently exist on the Hilbert-space dimension $D$
+or on $S_{\max}$ of a causal patch. Existing limits are only \emph{indirect}: for example,
+from non-observation of non-trivial cosmic topology in the CMB, or from lower bounds on
+vacuum decay rates. These motivate the conditional framing adopted here, but do not
+provide a direct empirical handle on finiteness. 
 
-\begin{figure}[h]
-  \centering
-\includegraphics[width=0.32\linewidth]{fig_energy_levels}
-\includegraphics[width=0.32\linewidth]{fig_k_modes}
-\includegraphics[width=0.32\linewidth]{fig_holographic_bound}
-  \caption{Electron $\to$ Cosmos bridge. (Left) discrete energy levels in a 1D infinite well; (Middle) discrete field modes in a finite box; (Right) holographic entropy bound scaling with area.}
-\end{figure}
-
-
-\begin{figure}[h]
-  \centering
-\includegraphics[width=0.48\linewidth]{figs/fig_fidelity.png}
-\includegraphics[width=0.48\linewidth]{figs/fig_trace_distance.png}
-  \caption{Recurrence schematic. Left: fidelity $F(t)=|\langle\psi(0)|\psi(t)\rangle|^2$ for a random finite-dimensional Hamiltonian showing quasi-periodic returns. Right: local (coarse-grained) recurrence via trace distance $\|\rho_A(t)-\rho_A(0)\|_1$ in a 4-qubit toy model.}
-\end{figure}
-
-\paragraph{Observational handles (final remark).}
-It should be emphasized that no direct observational constraints currently exist on the
-Hilbert-space dimension $D$ or on $S_{\max}$ of a causal patch. Existing limits are only
-\emph{indirect}: for example, from non-observation of non-trivial cosmic topology in the CMB,
-or from lower bounds on vacuum decay rates. Such considerations motivate the conditional
-framing adopted here, but they do not provide a direct empirical handle on the finiteness
-assumption. 
-
-Looking ahead, one could imagine that future probes of the fundamental 
-information content of spacetime might offer indirect tests. For example, 
-precise measurements of cosmic microwave background (CMB) correlations 
-could in principle reveal signs of a finite mode spectrum or unexpected 
-recurrence-like patterns. Similarly, advances in quantum gravity or 
-holographic approaches might eventually connect the dimensionality $D$ of 
-the cosmological Hilbert space to observable signatures, such as bounds 
-on entropy production in inflationary reheating. While such possibilities 
-remain speculative, they suggest that the framework may ultimately be 
-constrained—or even falsified—by empirical data.
+Looking ahead, future probes of the fundamental information content of spacetime
+could offer indirect tests. For example, precise measurements of CMB correlations might
+reveal signs of a finite mode spectrum, while advances in holographic quantum gravity
+could link the dimensionality $D$ to observable signatures such as entropy production in
+inflationary reheating. While speculative, these possibilities suggest that the framework
+is empirically vulnerable: any observational evidence of unbounded entropy or
+state-space growth would falsify CCR outright.
 
 
-\section{Rigour Addendum: What is Theorem-level vs Assumptions}\label{sec:rigour-addendum}
-The CCR statement is mathematically rigorous \emph{conditional} on (A1)--(A2). In particular:
-(i) for finite-dimensional $\mathcal H$ and unitary evolution, quantum almost-periodicity and recurrences follow (Bocchieri--Loinger);
-(ii) coarse-grained/local recurrences then follow from almost periodicity together with continuity of the partial trace in trace norm;
-(iii) canonical typicality (e.g., Goldstein--Lebowitz--Tumulka--Zangh\`i; Popescu--Short--Winter) underpins the operational relevance of coarse-grained returns.
-By contrast, the finiteness of the \emph{operational} state budget (A1) is a physics-level assumption motivated by Bekenstein--Hawking/Gibbons--Hawking bounds (and supported in Loop Quantum Gravity (LQG)/holographic contexts), while the microcanonical counting with a gravitational energy cap developed herein provides a physically controlled argument for free/weakly-coupled fields. ETH/ergodicity statements are used in the usual ``genericity'' sense.
+\section{Rigour Addendum: Theorem-Level vs.\ Assumptions}
 
+The CCR framework combines mathematically rigorous ingredients with
+physics-level assumptions. It is essential to separate the two:
 
-\section{Limitations, Compatibility, and Open Problems}
+\subsubsection*{Theorem-level results (rigorous).}
+\begin{enumerate}[label=(\roman*)]
+  \item For finite-dimensional $\mathcal{H}$ and unitary evolution,
+  quantum almost-periodicity and recurrences follow directly 
+  (Bocchieri--Loinger).
+  \item Coarse-grained/local recurrences follow from almost periodicity
+  together with continuity of the partial trace in trace norm.
+  \item Canonical typicality results 
+  (e.g.\ Goldstein--Lebowitz--Tumulka--Zanghì;
+  Popescu--Short--Winter) establish the operational relevance of
+  coarse-grained returns.
+\end{enumerate}
 
-\paragraph{Conditions for Breakdown.}
-The Conditional Recurrence Theorem relies critically on assumption (A1), namely that the Hilbert space dimension
-$\dim\mathcal{H}_{\mathrm{patch}}$ of a causal patch is finite.
-If (A1) is violated — for example:
+\subsubsection*{Physics-level assumptions.}
 \begin{itemize}
-    \item The holographic bound does not apply to cosmological causal patches,
-    \item The underlying theory allows unbounded entropy (e.g. an infinite number of field modes without a physical cutoff),
+  \item The finiteness of the \emph{operational} state budget (A1) is
+  not a theorem but an assumption, motivated by Bekenstein--Hawking/Gibbons--Hawking
+  entropy bounds and supported in Loop Quantum Gravity (LQG) and
+  holographic contexts.
+  \item The microcanonical counting with a gravitational energy cap developed
+  herein provides a physically controlled argument for free/weakly coupled fields.
+  \item ETH/ergodicity statements are used in their standard “genericity” sense.
+\end{itemize}
 
-    \paragraph{Infinite Hilbert-space scenarios (with minimal math).}
+\paragraph{Summary.}
+If (A1) fails, the CCR framework is falsified in its entirety. If (A1) holds,
+then the CCR theorem follows rigorously. This clear conditional structure ensures
+that the distinction between mathematics and physics is explicit.
+
+
+
+\section{Limitations and Open Issues}
+
+\subsection{Breakdown Scenarios}
+The Conditional Recurrence Theorem relies critically on assumption (A1),
+namely that the Hilbert space dimension $\dim\mathcal{H}_{\mathrm{patch}}$ of a causal patch is finite.
+If (A1) is violated, CCR's finite-$D$ premise fails. Typical cases include:
+\begin{itemize}
+  \item The holographic bound does not apply to cosmological causal patches,
+  \item The underlying theory allows unbounded entropy (e.g.\ an infinite number of field modes without a physical cutoff).
+\end{itemize}
+
+\paragraph{Infinite Hilbert-space scenarios (with minimal math).}
 There are well-motivated settings in which the operational state space inside a causal region
-is effectively infinite, invalidating CCR's finite-$D$ premise:
-
+is effectively infinite, invalidating CCR:
 \begin{itemize}
-    \item \textbf{Continuum QFT without cutoffs (infinite volume).}
-    In a continuum field theory on a spatial region of volume $V$, the number of modes below a UV scale $\Lambda$
-    scales as
-    \[
-      M(\Lambda) \sim \frac{V}{(2\pi)^3}\,\frac{4\pi}{3}\,\Lambda^3.
-    \]
-    For non-compact or infinite-volume backgrounds $V\to\infty$, one gets $M(\Lambda)\to\infty$ even at finite~$\Lambda$,
-    hence the Fock space dimension is unbounded. Without a gravitational entropy cap, there is no finite
-    operational state budget and quantum almost-periodicity theorems for finite $D$ do not apply.
+  \item \textbf{Continuum QFT without cutoffs (infinite volume).}
+  In a continuum field theory on a spatial region of volume $V$, the number of modes below a UV scale $\Lambda$
+  scales as
+  \[
+     M(\Lambda) \sim \frac{V}{(2\pi)^3}\,\frac{4\pi}{3}\,\Lambda^3.
+  \]
+  For non-compact or infinite-volume backgrounds $V\to\infty$, one gets $M(\Lambda)\to\infty$ even at finite~$\Lambda$,
+  hence the Fock space dimension is unbounded. Without a gravitational entropy cap, there is no finite
+  operational state budget and quantum almost-periodicity theorems for finite $D$ do not apply.
 
-    \item \textbf{Cosmologies with unbounded entropy growth.}
-    In open Friedmann-Robertson-Walker (FRW) or certain eternal-inflation scenarios, coarse-grained entropy can increase without bound
-    (e.g.\ ever-growing apparent horizons or sustained particle production). If
-    \[
-       S_{\text{req}}(t)\nearrow\infty\quad\text{as}\quad t\to\infty,
-    \]
-    then any effective dimension $D_{\mathrm{eff}}(t)\sim \exp\{S_{\text{req}}(t)/k_B\}$ diverges in time, so there is
-    no time-independent finite-$D$ Hilbert space on which to invoke CCR.
+  \item \textbf{Cosmologies with unbounded entropy growth.}
+  In open FRW or certain eternal-inflation scenarios, coarse-grained entropy can increase without bound
+  (e.g.\ ever-growing horizons or sustained particle production). If
+  \[
+     S_{\text{req}}(t)\nearrow\infty\quad\text{as}\quad t\to\infty,
+  \]
+  then any effective dimension $D_{\mathrm{eff}}(t)\sim \exp\{S_{\text{req}}(t)/k_B\}$ diverges in time, so there is
+  no time-independent finite-$D$ Hilbert space on which to invoke CCR.
 
-    \item \textbf{Non-compact holographic duals / continuous spectra.}
-    In AdS/CFT with non-compact spatial slices (or flat-space holography), the dual theory typically has
-    a continuous spectrum in the relevant sector. Continuous spectral measures preclude the kind of
-    quasi-periodic phase re-alignment guaranteed on a compact torus of phases; thus, no theorem-level
-    recurrence time follows from unitarity alone in these cases.
+  \item \textbf{Non-compact holographic duals / continuous spectra.}
+  In AdS/CFT with non-compact spatial slices (or flat-space holography), the dual theory typically has
+  a continuous spectrum in the relevant sector. Continuous spectral measures preclude the kind of
+  quasi-periodic phase re-alignment guaranteed on a compact torus of phases; thus, no theorem-level
+  recurrence time follows from unitarity alone in these cases.
 \end{itemize}
 
 \noindent\emph{Consequence.} In all the above, the key CCR hypothesis (finite operational $D$) fails.
 Global quantum recurrences are not mathematically guaranteed; at best one may observe model-dependent
 quasi-recurrences or ergodic features, but no universal bound on return times.
 
-    
-    \item Unitarity fails at cosmological scales (as in certain objective collapse or non-Hamiltonian models),
-    \item The causal patch framework is not the correct coarse-graining of cosmology,
-\end{itemize}
-then the conclusion of inevitable recurrences in the finite-$D$ case does not follow.
-In such cases, even with a large but finite coarse-graining scale, the Bocchieri–Loinger theorem cannot be applied globally.
-Moreover, if (A1) fails while (A2–A4) still hold, one recovers the conventional picture of unbounded state space, in which the notion of recurrence becomes physically irrelevant for observers.
-
-
+\subsection{Caveats and Consequences}
+Even if (A1) fails, while (A2--A4) still hold, one recovers the conventional picture of unbounded state space,
+in which the notion of recurrence becomes physically irrelevant for observers. Specific caveats include:
 \begin{itemize}
-    \item \textbf{de Sitter holography:} Entropic bounds in FRW/de Sitter are compelling but not rigorously derived from a completed quantum gravity.
-    \item \textbf{Non-unitary models:} Objective-collapse dynamics would invalidate recurrence.
-    \item \textbf{Sector locking / non-ergodicity:} Horizons and conserved charges may confine dynamics; recurrence then holds within sectors.
-    \item \textbf{Measure ambiguity:} Different measures yield different predictions; the prescription in Sec.~\ref{sec:measure} satisfies basic sanity checks but remains an assumption. The no--BB constraint is stated once, canonically, in Sec.~\ref{sec:measure}.
-    \item \textbf{Timescales:} Global recurrences occur on timescales at least double--exponential in $\Smax$ (Remark~\ref{rem:times}); only coarse--grained returns may have operational relevance.
-    \item \textbf{Falsifiability:} The finite-dimensional Hilbert space conjecture for de Sitter patches (A1) could be falsified if any observation demonstrates unbounded entropy growth within a causal patch.
-    \item \textbf{Compatibility:} CCR is consistent with Poincar\'e recurrence in finite systems and with holographic formulations; in de Sitter cosmology it aligns with proposals of finite $\dim\mathcal H\sim e^{S_{\rm dS}}$\,\cite{BanksFischler2001,BanksFischler2003} while differing from eternal-inflation pictures with infinite state spaces.
-    \item \textbf{Swampland constraints:} If fully stable de Sitter vacua are absent or highly constrained\,\cite{Obied2018,Ooguri2019}, a non-negligible decay rate is expected, which supports the no--BB requirement and enhances predictivity under this measure prescription.
+  \item Unitarity fails at cosmological scales (as in certain objective-collapse or non-Hamiltonian models),
+  \item The causal patch framework may not be the correct coarse-graining of cosmology,
+  \item \textbf{Non-unitary models:} Objective-collapse dynamics would invalidate recurrence,
+  \item \textbf{Sector locking / non-ergodicity:} Horizons and conserved charges may confine dynamics;
+        recurrence then holds only within sectors,
+  \item \textbf{Measure ambiguity:} Different measures yield different predictions;
+        the prescription in Sec.~\ref{sec:measure} satisfies basic sanity checks but remains an assumption.
+        The no--BB constraint is stated once, canonically, in Sec.~\ref{sec:measure},
+  \item \textbf{Timescales:} Global recurrences occur on timescales at least double--exponential in $\Smax$ (Remark~\ref{rem:times});
+        only coarse--grained returns may have operational relevance,
+  \item \textbf{Falsifiability:} The finite-dimensional Hilbert space conjecture (A1) could be falsified if any observation
+        demonstrates unbounded entropy growth within a causal patch.
 \end{itemize}
+
+\subsection{Compatibility with Holography and Swampland}
+Despite these limitations, CCR is compatible with several frameworks:
+\begin{itemize}
+  \item \textbf{de Sitter holography:} Entropic bounds in FRW/de Sitter are compelling but not rigorously derived
+        from a completed quantum gravity,
+  \item \textbf{Compatibility:} CCR is consistent with Poincar\'e recurrence in finite systems and with holographic formulations;
+        in de Sitter cosmology it aligns with proposals of finite $\dim\mathcal H \sim e^{S_{\rm dS}}$\,\cite{BanksFischler2001,BanksFischler2003}
+        while differing from eternal-inflation pictures with infinite state spaces,
+  \item \textbf{Swampland constraints:} If fully stable de Sitter vacua are absent or highly constrained\,\cite{Obied2018,Ooguri2019},
+        a non-negligible decay rate is expected, which supports the no--BB requirement and enhances predictivity.
+\end{itemize}
+
+\paragraph{Closing remark.}
+CCR is not a universal law but a conditional framework.
+Its validity hinges on the finiteness of Hilbert space per causal patch;
+its falsification would follow from any observational or theoretical evidence
+for unbounded entropy growth, while its consistency would strengthen the case
+for holographic entropy bounds in cosmology.
+
 
 
 \section{Proof Sketches and Notes}
-\paragraph{Quantum recurrence.} Finite $D$ implies expansion $|\psi(t)\rangle=\sum_j c_j e^{-iE_j t}\ket{E_j}$. The map $t\mapsto (e^{-iE_j t})_j$ is almost periodic on $\mathbb{T}^D$ (Kronecker); choose $t$ so that phases re-align within tolerance $\varepsilon$.
-\paragraph{Coarse-grained/local recurrence.} Let $\rho_A(t)=\Tr_{\bar A}\rho(t)$. Typicality/ETH suggests that for most $t$, $\rho_A(t)$ is close to an equilibrium ensemble. By almost periodicity and continuity of trace norms under partial trace, there exist arbitrarily large $T$ with $\|\rho_A(T)-\rho_A(0)\|_1<\varepsilon$ for finite $A$; under ETH/typicality, $T^{(A)}_{\rm rec}$ scales roughly like $\exp\{c\,S_A\}$ for fixed tolerance (see Remark~\ref{rem:times}).
+
+\paragraph{Quantum recurrence.}
+Finite $D$ implies the expansion 
+\[
+|\psi(t)\rangle=\sum_j c_j e^{-iE_j t}\ket{E_j}.
+\]
+The map $t\mapsto (e^{-iE_j t})_j$ is almost periodic on $\mathbb{T}^D$ (Kronecker). 
+Choosing $t$ so that phases re-align within tolerance $\varepsilon$ guarantees 
+arbitrarily accurate returns. Quantitative lower bounds on recurrence times follow 
+from Diophantine properties of the spectral gaps $\{E_j-E_k\}$, with simultaneous 
+Diophantine approximation (Cassels, Schmidt) providing control at scales 
+$\Trec \gtrsim \exp(cD)$ for some constant $c=O(1)$.
+
+\paragraph{Coarse-grained/local recurrence.}
+Let $\rho_A(t)=\Tr_{\bar A}\rho(t)$. Typicality/ETH suggests that for most $t$, 
+$\rho_A(t)$ is close to an equilibrium ensemble. By almost periodicity and 
+continuity of trace norms under partial trace, there exist arbitrarily large $T$ 
+with $\|\rho_A(T)-\rho_A(0)\|_1<\varepsilon$ for finite $A$. 
+Under ETH/typicality, the recurrence time of subsystem $A$ scales roughly like
+\[
+T^{(A)}_{\rm rec}\sim \exp\{c\,S_A\},
+\]
+for fixed tolerance, consistent with Remark~\ref{rem:times}. 
 
 \section{Connections to Broader Frameworks}
 
 \paragraph{String theory and holography.}
-In AdS/CFT a CFT on a compact spatial manifold has a discrete spectrum and finite thermal entropy for finite energy, so (coarse-grained) recurrences follow on exponentially long timescales; black-hole entropy scales with area, matching the holographic spirit of (A1). While a complete de Sitter holography is not established, proposals such as dS/CFT and static-patch finiteness motivate treating $\Smax\!\sim\! A/4\ell_P^2$ as an operational cap. Under such an assumption the CCR statement is a direct, causal-patch analogue: finite operational $D$ $+$ unitarity $\Rightarrow$ (coarse-grained) quantum recurrences.
+In AdS/CFT, a CFT on a compact spatial manifold has a discrete spectrum and 
+finite thermal entropy for finite energy, so (coarse-grained) recurrences 
+follow on exponentially long timescales. Black-hole entropy scales with area, 
+matching the holographic spirit of assumption (A1). 
+
+While a complete de Sitter holography is not yet established, proposals such as 
+dS/CFT and static-patch finiteness motivate treating 
+$\Smax \sim A/4\ell_P^2$ as an operational entropy cap. 
+Under such an assumption, the CCR statement acts as a direct, causal-patch 
+analogue: 
+\[
+\text{finite operational } D \; + \; \text{unitarity} 
+\;\;\Rightarrow\;\; \text{(coarse-grained) quantum recurrences}.
+\]
+
+This operational perspective is distinct from a UV-complete duality but 
+resonates with Swampland considerations that disfavor fully stable de Sitter vacua. 
+In this sense, CCR can be viewed as a low-energy, information-theoretic corollary 
+of holographic entropy bounds, independent of whether a complete dS holography 
+is ultimately realized.
+
+
+\section{Conclusion and Outlook}
+
+The Conditional Cosmological Recurrence (CCR) framework developed here
+establishes a clear micro--to--macro bridge from holographic entropy
+bounds to finite Hilbert-space dimensionality, and hence to quantum
+recurrence. Its structure is strictly conditional: if causal patches admit
+a finite operational Hilbert-space dimension, recurrence follows rigorously
+from unitarity; conversely, if $D=\infty$, the framework is falsified in
+its entirety. 
+
+This conditional framing allows CCR to serve as a conceptual bridge
+between microscopic entropy bounds and macroscopic cosmology.
+Although global recurrences occur on timescales that are double--exponential
+and operationally irrelevant, the framework yields falsifiable implications:
+predictivity in eternal inflation, suppression of Boltzmann brains, and
+observational vulnerability to evidence of unbounded entropy growth.
+Looking ahead, further development of toy models, connections with
+holographic dualities, and possible indirect observational probes may
+clarify whether the CCR program captures a structural feature of quantum
+cosmology or must ultimately be replaced by a different organizing principle.
+
+
 
 \appendix
 \section*{Appendix A: Operational Dimension via Metric Entropy}
@@ -563,14 +789,28 @@ This subsection is a speculative phenomenological model (not derived from a comp
 H^2(a) = \frac{8\pi G}{3} \rho(a) \left[1 - \Phi(a)\right],
 \end{equation}
 so that as \(\Phi(a) \to 1\), the expansion rate slows down and the causal patch ceases to grow in available state space.
+This is only a toy phenomenological parametrization and should not be taken as a prediction of the CCR framework.
 
 \subsection{Implication for CCR}
 If the causal patch Hilbert space saturates at a finite \(D_{\max}\), assumption (A1) follows naturally. Combined with (A2), unitarity of the time evolution, the Bocchieri--Loinger theorem implies that the quantum dynamics must be almost periodic, leading directly to the CCR result.
 
-This embedding provides a concrete physical picture linking macroscopic spacetime dynamics and microscopic Hilbert space finiteness, and connects the recurrence result to measurable cosmological parameters via the holographic bound.
+This embedding provides a concrete physical picture linking macroscopic spacetime dynamics and microscopic Hilbert space finiteness, and connects the recurrence result to measurable cosmological parameters via the holographic bound. These arguments are heuristic and serve only to motivate assumption (A1); they are not derived from a complete theory of quantum gravity.
 
 \section*{Appendix B: Microcanonical Counting with a Gravitational Cap}
 \label{app:microcanonical}
+
+\paragraph{Disclaimer.}
+The following free--field microcanonical estimate is presented only as an
+illustrative toy calculation. It is not intended as a rigorous derivation
+for strongly coupled gravity, but as a complementary demonstration that
+the gravitational energy cap enforces a finite Fock subspace even in the
+simplest setting. In interacting or strongly coupled regimes, the detailed
+scaling will differ, but the qualitative conclusion --- finiteness of the
+accessible Hilbert space under an entropy cap --- is robust. Operationally,
+this counting saturates the same scaling implied by the holographic bound,
+$\log D \lesssim S_{\max}/k_B$, and should be regarded as heuristic support
+for assumption (A1) rather than an independent proof.
+
 
 Consider a (free) relativistic field in a cubic box $L^3$ with standard boundary conditions. IR discretization gives momenta $\mathbf k=\frac{\pi}{L}(n_x,n_y,n_z)$ and frequencies $\omega_{\mathbf k}\ge c|\mathbf k|$. Impose the microcanonical constraint $\sum_{\mathbf k} n_{\mathbf k}\hbar\omega_{\mathbf k}\le E_{\rm BH}(R)$ with $R\sim L$.
 Let $M(\Lambda)$ be the number of modes with $\hbar\omega_{\mathbf k}\le \Lambda$; then $M(\Lambda)\sim \frac{4\pi}{3}\big(\frac{L\Lambda}{\pi\hbar c}\big)^3$. Since each quantum costs at least $\hbar\omega_{\min}\sim \hbar\pi c/L$, the total occupation obeys $N_{\text{quanta}}\le n_{\max}\sim E_{\rm BH}/(\hbar\omega_{\min})$.
@@ -655,6 +895,18 @@ Consequently, the dimension of the Hilbert space is finite:
 \dim \mathcal{H} = \mathcal{N} < \infty \, .
 \end{equation}
 This forms the key physical premise underlying the Conditional Cosmological Recurrence (CCR) theorem developed here.
+
+\paragraph{Remark.}
+Both the black hole and de Sitter horizon bounds are semiclassical results,
+derived within general relativity and quantum field theory in curved spacetime.
+While they may be modified in a full theory of quantum gravity, they provide
+a strong heuristic motivation for assuming a finite Hilbert space dimension
+in causal patches. In this sense, they serve as physical premises for (A1),
+rather than rigorous derivations.
+Thus, while schematic, the microcanonical estimate is fully consistent with—
+and illustrative of—the entropy–bound logic underlying the CCR framework.
+
+
 
 \section{Quantitative Recurrence Estimates}
 For an asymptotic de Sitter patch with $\Smax\sim 10^{122} k_B$, a conservative global recurrence estimate using the double-exponential bound gives
@@ -745,6 +997,16 @@ This is a compact prescription rather than an ad-hoc casework.
 
 \noindent In short: (finite operational $D$) $+$ (unitary dynamics) $\Rightarrow$ CCR, with a concrete micro–to–macro bridge and a lean measure choice that avoids known pitfalls.
 
+\paragraph{Remark.}
+Earlier analyses of cosmological recurrence (e.g.\ Dyson--Kleban--Susskind, Bousso)
+framed the phenomenon heuristically or within specific dynamical models.
+The CCR contribution differs by recasting recurrence as a falsifiable conditional
+theorem, derived explicitly from finite--$D$ counting under holographic caps,
+and by supplementing this with a minimalistic measure prescription that
+avoids Boltzmann--Brain pathologies. In this sense, CCR sharpens prior
+heuristic arguments into a testable, conditional framework.
+
+
 \bibliographystyle{unsrt}
 \bibliography{references}
 
@@ -782,6 +1044,15 @@ Toy model ($D=16$) & $\ln 16$ & $\sim 10^{2}$ units & Yes (verified) \\
 \section*{Appendix E: Methods for Toy Models}
 \label{app:methods-toys}
 
+\paragraph{Remark.}
+The toy models presented in this appendix are intentionally minimal, serving
+only as proofs-of-principle that finite Hilbert spaces generically imply recurrences.
+They are not meant to quantitatively model cosmological dynamics. 
+Future work could incorporate more sophisticated models (e.g.\ lattice field
+theory truncations or AdS/CFT toy setups) to assess the robustness of these
+scaling behaviors in settings closer to cosmology.
+
+
 \paragraph{Global signal (finite-$D$).}
 Random energy spectra $\{E_j\}_{j=1}^D$ (band-limited) are generated with weights $\{p_j\}$ drawn from a Dirichlet distribution, representing the squared amplitudes $|c_j|^2$ of the initial state.
 The global fidelity is computed as
@@ -804,6 +1075,16 @@ using ensembles of $10^3$ realizations to estimate median values.
 
 \clearpage
 \section*{Appendix F: Scaling of Recurrence Times}
+
+\emph{
+\paragraph{Disclaimer.}
+The following derivation is schematic: it provides order-of-magnitude scaling
+estimates rather than exact recurrence times. The intent is to illustrate why,
+under holographic entropy bounds, global recurrences are generically
+double--exponential in $S/k_B$. Precise control requires number-theoretic
+bounds on Diophantine approximation, which only reinforce (rather than weaken)
+the double--exponential growth quoted here.
+}
 
 A standard estimate for recurrence times follows from the finiteness of the Hilbert space 
 dimension $D$. For a generic Hamiltonian with $D$ nondegenerate energy levels, the 
